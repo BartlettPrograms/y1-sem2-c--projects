@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "cPlayerCharacter.h"
+#include "cPlatformRect.h"
 #include <iostream>
 
 class cGameManager
@@ -20,4 +21,7 @@ private:
 	sf::RenderWindow& mGameWindow;
 	// Player Character
 	cPlayerCharacter mPlayerCharacter;
+	// Platform
+	cPlatformRect mPlatform1;
+	cPlatformRect mPlatform2;
 };

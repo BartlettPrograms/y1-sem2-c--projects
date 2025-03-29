@@ -37,24 +37,18 @@
     <Filter Include="Animator\Animations\Idle">
       <UniqueIdentifier>{b325a958-97cd-499c-9ad5-6d5cd04c17ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Components">
+      <UniqueIdentifier>{1d03ac70-b4e9-42d6-b270-887b63b577c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Floor">
+      <UniqueIdentifier>{776fb4e2-e257-4aaa-b9a0-ed02889267e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cGameManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cDrawable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cPlayerInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cUpdateable.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cUpdateable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cPhysicsObject.h">
@@ -81,15 +75,27 @@
     <ClCompile Include="cAnimationSliding.cpp">
       <Filter>Animator\Animations\Sliding</Filter>
     </ClCompile>
+    <ClCompile Include="cUpdateable.cpp">
+      <Filter>GameObjects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlayerInput.cpp">
+      <Filter>GameObjects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="cDrawable.cpp">
+      <Filter>GameObjects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="cUpdateable.h">
+      <Filter>GameObjects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="cBoxCollider.cpp">
+      <Filter>GameObjects\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlatformRect.cpp">
+      <Filter>GameObjects\Floor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cGameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cDrawable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cPlayerInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cGameObject.h">
@@ -118,6 +124,18 @@
     </ClInclude>
     <ClInclude Include="cAnimationSliding.h">
       <Filter>Animator\Animations\Sliding</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlayerInput.h">
+      <Filter>GameObjects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="cDrawable.h">
+      <Filter>GameObjects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="cBoxCollider.h">
+      <Filter>GameObjects\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlatformRect.h">
+      <Filter>GameObjects\Floor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,8 +2,9 @@
 #include "cPhysicsObject.h"
 #include "cPlayerInput.h"
 #include "cAnimator.h"
+#include "cBoxCollider.h"
 
-class cPlayerCharacter : public cPhysicsObject
+class cPlayerCharacter : public cPhysicsObject, cBoxCollider
 {
 public:
 	cPlayerCharacter();
@@ -12,10 +13,14 @@ public:
 	void Draw(sf::RenderWindow& renderWindow) override;
 	void Jump();
 	void HandleInput();
+	// Collision
+	cBoxCollider& GetCollider() { return *this; }
 private:
 	// Player Input
 	cPlayerInput mPlayerInput;
 	sf::Vector2f m_vPlayerInputNormalized;
+	// Collision
+	sf::RectangleShape mBody;
 	// Physics members
 	float mGravity = 400;
 	sf::Vector2f mMaxVelocity;

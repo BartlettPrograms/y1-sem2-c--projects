@@ -1,14 +1,20 @@
 #include "cPlayerCharacter.h"
 
 cPlayerCharacter::cPlayerCharacter()
+    : cPhysicsObject()
+    , mBody(sf::Vector2f(24, 24))
+    , cBoxCollider(mBody)
+    , mMaxVelocity(sf::Vector2f(350, 700))
+    , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
-    // Init physics
-    mMaxVelocity = sf::Vector2f(350, 700);
-    m_vPlayerInputNormalized = sf::Vector2f(0, 0);
-
     // Initial Position
     mPosition = sf::Vector2f(700, 683);
     mVelocity = sf::Vector2f(0.0f, 0.0f);
+    mBody.setOrigin(sf::Vector2f(12, 0));
+    mBody.setPosition(mPosition);
+    mBody.setOutlineColor(sf::Color::Red);
+    mBody.setOutlineThickness(7);
+    mBody.setFillColor(sf::Color::Transparent);
 }
 
 cPlayerCharacter::~cPlayerCharacter()
@@ -19,6 +25,9 @@ cPlayerCharacter::~cPlayerCharacter()
 void cPlayerCharacter::Update(float DeltaSeconds)
 {
     HandleInput();
+
+    // Collider currently follows this objects position
+    mBody.setPosition(mPosition);
 
     // No Input
     if (m_vPlayerInputNormalized.x == 0) {   
@@ -109,6 +118,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
 void cPlayerCharacter::Draw(sf::RenderWindow& renderWindow) 
 {
     mPlayerAnimator.Draw(renderWindow);
+    renderWindow.draw(mBody);
 }
 
 void cPlayerCharacter::Jump()

@@ -118,3 +118,5 @@ FlappyPlane/x64/Debug/FlappyPlane.log
 FlappyPlane/x64/Debug/FlappyPlane.ilk
 FlappyPlane/x64/Debug/FlappyPlane.exe.recipe
 FlappyPlane/x64/Debug/FlappyPlane.Build.CppClean.log
+*.ipch
+*.vsidx
