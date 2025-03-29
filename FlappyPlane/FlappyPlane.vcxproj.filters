@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{a2e5976e-5911-46cb-8098-77c1668cb540}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Player">
+      <UniqueIdentifier>{11631855-183d-4cc7-b95b-a7de024f4c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator">
+      <UniqueIdentifier>{8ad6cc16-d5e0-429c-89f1-89a2ecddc7ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator\Animations">
+      <UniqueIdentifier>{c69a08ec-b208-4412-a0c3-dd5062780e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator\Animations\Running">
+      <UniqueIdentifier>{4b5324fa-3a92-441b-9613-6f2f8bb6503c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator\Animations\Jumping">
+      <UniqueIdentifier>{973db4f2-dbd9-452a-81ac-87262ef5ab6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator\Animations\Sliding">
+      <UniqueIdentifier>{be402db4-f9a1-4857-b5e7-adbfc4ba6001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Animator\Animations\Idle">
+      <UniqueIdentifier>{b325a958-97cd-499c-9ad5-6d5cd04c17ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cGameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cDrawable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlayerInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cUpdateable.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cUpdateable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cPhysicsObject.h">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlayerCharacter.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimator.cpp">
+      <Filter>Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimationRunning.cpp">
+      <Filter>Animator\Animations\Running</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimation.cpp">
+      <Filter>Animator\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimationJumping.cpp">
+      <Filter>Animator\Animations\Jumping</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimationIdle.cpp">
+      <Filter>Animator\Animations\Idle</Filter>
+    </ClCompile>
+    <ClCompile Include="cAnimationSliding.cpp">
+      <Filter>Animator\Animations\Sliding</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cGameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cDrawable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlayerInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cGameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlayerCharacter.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimator.h">
+      <Filter>Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimation.h">
+      <Filter>Animator\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationRunning.h">
+      <Filter>Animator\Animations\Running</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationFalling.h">
+      <Filter>Animator\Animations\Jumping</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationJumping.h">
+      <Filter>Animator\Animations\Jumping</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationIdle.h">
+      <Filter>Animator\Animations\Idle</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationSliding.h">
+      <Filter>Animator\Animations\Sliding</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
