@@ -6,15 +6,18 @@ cPlayerCharacter::cPlayerCharacter()
     , cBoxCollider(mBody)
     , mMaxVelocity(sf::Vector2f(350, 700))
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
+    // Debug Vars
+    , mDebugPositionShape(3)
 {
     // Initial Position
     mPosition = sf::Vector2f(700, 683);
     mVelocity = sf::Vector2f(0.0f, 0.0f);
-    mBody.setOrigin(sf::Vector2f(12, 0));
+    mBody.setOrigin(sf::Vector2f(-3, 0));
     mBody.setPosition(mPosition);
     mBody.setOutlineColor(sf::Color::Red);
     mBody.setOutlineThickness(7);
     mBody.setFillColor(sf::Color::Transparent);
+
 }
 
 cPlayerCharacter::~cPlayerCharacter()
@@ -79,13 +82,13 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         mVelocity.y = 0;
         m_bGrounded = true;
     }
-    // Clamp x position between 0 and 1366
-    if (mPosition.x < 64)            // og: 0
+    // Clamp x position to keep player inside screen
+    if (mPosition.x < 64)
     {
         mPosition.x = 64;
         mVelocity.x = 0;
     }
-    else if (mPosition.x > 1302)    // og: 1366
+    else if (mPosition.x > 1302)
     {
         mPosition.x = 1302;
         mVelocity.x = 0;
@@ -106,9 +109,11 @@ void cPlayerCharacter::Update(float DeltaSeconds)
 
     if (mVelocity.x > 1) {
         mPlayerAnimator.FaceRight();
+        mBody.setOrigin(sf::Vector2f(-3, 0));
     }
     else if (mVelocity.x < -1) {
         mPlayerAnimator.FaceLeft();
+        mBody.setOrigin(sf::Vector2f(27, 0));
     }
 
     // Update Animation
@@ -117,8 +122,8 @@ void cPlayerCharacter::Update(float DeltaSeconds)
 
 void cPlayerCharacter::Draw(sf::RenderWindow& renderWindow) 
 {
+    DrawDebug(renderWindow);
     mPlayerAnimator.Draw(renderWindow);
-    renderWindow.draw(mBody);
 }
 
 void cPlayerCharacter::Jump()
@@ -145,4 +150,11 @@ void cPlayerCharacter::HandleInput()
         mPlayerAnimator.BeginJump();
         Jump();
     }
+}
+
+void cPlayerCharacter::DrawDebug(sf::RenderWindow& renderWindow)
+{
+    mDebugPositionShape.setPosition(mBody.getPosition());
+    renderWindow.draw(mBody); // draw collider
+    renderWindow.draw(mDebugPositionShape); // draw player ground center
 }

@@ -15,6 +15,9 @@ public:
 	void HandleInput();
 	// Collision
 	cBoxCollider& GetCollider() { return *this; }
+
+	//Debug
+	void DrawDebug(sf::RenderWindow& renderWindow);
 private:
 	// Player Input
 	cPlayerInput mPlayerInput;
@@ -34,4 +37,6 @@ private:
 	//Player Movement
 	bool m_bGrounded = true;
 	float m_fJumpImpulse = 300;
+	// Debug
+	sf::CircleShape mDebugPositionShape;
 };
