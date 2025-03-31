@@ -1,8 +1,10 @@
 #include "cBoxCollider.h"
 
-cBoxCollider::cBoxCollider(sf::FloatRect& bounds)
+cBoxCollider::cBoxCollider(sf::FloatRect bounds)
 	: mBounds(bounds)
 {
+	std::cout << "Collider Position x: " << mBounds.position.x << "  y: " << mBounds.position.y << std::endl;
+	std::cout << "Collider size x: " << mBounds.size.x << "  y: " << mBounds.size.y << std::endl;
 }
 
 cBoxCollider::~cBoxCollider()
@@ -11,6 +13,7 @@ cBoxCollider::~cBoxCollider()
 
 bool cBoxCollider::CheckCollision(cBoxCollider& other, float push)
 {
+	//std::cout << "Collider x: " << mBounds.position.x << "  y: " << mBounds.position.y << std::endl;
 	sf::Vector2f otherPosition = other.GetPosition();
 	sf::Vector2f otherHalfSize = other.GetHalfSize();
 	sf::Vector2f thisPosition = GetPosition();

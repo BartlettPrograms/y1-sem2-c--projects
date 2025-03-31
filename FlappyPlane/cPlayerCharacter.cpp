@@ -1,7 +1,7 @@
 #include "cPlayerCharacter.h"
 
 cPlayerCharacter::cPlayerCharacter()
-    : cCharacter(eCharacterType::TYPE_PLAYER, sf::FloatRect(sf::Vector2f(0,0), sf::Vector2f(24, 24)), sf::Vector2f(700, 683), sf::Vector2f(350, 700))
+    : cCharacter(eCharacterType::TYPE_PLAYER, mBounds, sf::Vector2f(700, 683), sf::Vector2f(350, 700))
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
@@ -22,11 +22,6 @@ cPlayerCharacter::~cPlayerCharacter()
 void cPlayerCharacter::Update(float DeltaSeconds)
 {
     HandleInput();
-
-    // Collider currently follows this objects position
-    mBounds.position = mPosition;
-    mDebugPositionShape.setPosition(mPosition);
-    mDebugColliderShape.setPosition(mPosition);
 
     // No Input
     if (m_vPlayerInputNormalized.x == 0) {   
@@ -119,9 +114,4 @@ void cPlayerCharacter::HandleInput()
     }
 }
 
-void cPlayerCharacter::DrawDebug(sf::RenderWindow& renderWindow)
-{
-    mDebugPositionShape.setPosition(mPosition);
-    renderWindow.draw(mDebugColliderShape); // draw collider
-    renderWindow.draw(mDebugPositionShape); // draw player ground center
-}
+

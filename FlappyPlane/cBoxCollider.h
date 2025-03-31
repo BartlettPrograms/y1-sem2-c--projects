@@ -5,12 +5,12 @@
 class cBoxCollider
 {
 public:
-	cBoxCollider(sf::FloatRect& bounds);
+	cBoxCollider(sf::FloatRect bounds);
 	~cBoxCollider();
 
 	bool CheckCollision(cBoxCollider& other, float push);
 	sf::Vector2f GetPosition() { return mBounds.position; }
 	sf::Vector2f GetHalfSize() { return mBounds.size / 2.0f; }
 protected:
-	sf::FloatRect& mBounds;
+	sf::FloatRect mBounds;
 };

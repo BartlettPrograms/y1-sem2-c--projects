@@ -5,7 +5,7 @@
 class cPhysicsObject : public cGameObject, public cUpdateable, public cBoxCollider
 {
 public:
-	cPhysicsObject(sf::FloatRect bounds, sf::Vector2f _maxVelocity);
+	cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity);
 	~cPhysicsObject();
 	void SetMaxVelocity(sf::Vector2f _maxVelocity) { mMaxVelocity = _maxVelocity; }
 protected:

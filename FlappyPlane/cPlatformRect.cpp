@@ -10,6 +10,7 @@ cPlatformRect::cPlatformRect(sf::FloatRect bounds)
 
 cPlatformRect::~cPlatformRect()
 {
+
 }
 
 void cPlatformRect::Draw(sf::RenderWindow& window)

@@ -13,9 +13,6 @@ public:
 	void HandleInput();
 	// Collision
 	cBoxCollider& GetCollider() { return *this; }
-
-	//Debug
-	void DrawDebug(sf::RenderWindow& renderWindow);
 private:
 	// Player Input
 	cPlayerInput mPlayerInput;
