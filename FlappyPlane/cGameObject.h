@@ -9,7 +9,6 @@ protected:
 	// Position
 	sf::Vector2f mPosition;
 	// Graphics
-	sf::Image mImage;
 	sf::Texture mTexture;// Create texture from above
 	sf::Sprite* mSprite; // create sprite from above
 };

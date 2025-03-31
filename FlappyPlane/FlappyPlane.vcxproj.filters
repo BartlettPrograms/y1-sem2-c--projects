@@ -16,9 +16,6 @@
     <Filter Include="GameObjects">
       <UniqueIdentifier>{a2e5976e-5911-46cb-8098-77c1668cb540}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects\Player">
-      <UniqueIdentifier>{11631855-183d-4cc7-b95b-a7de024f4c17}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Animator">
       <UniqueIdentifier>{8ad6cc16-d5e0-429c-89f1-89a2ecddc7ff}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,12 @@
     <Filter Include="GameObjects\Floor">
       <UniqueIdentifier>{776fb4e2-e257-4aaa-b9a0-ed02889267e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Character">
+      <UniqueIdentifier>{745473b4-3b85-4afe-965e-9ba51cc37f92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Character\PlayerCharacter">
+      <UniqueIdentifier>{11631855-183d-4cc7-b95b-a7de024f4c17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,7 +58,7 @@
       <Filter>GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="cPlayerCharacter.cpp">
-      <Filter>GameObjects\Player</Filter>
+      <Filter>GameObjects\Character\PlayerCharacter</Filter>
     </ClCompile>
     <ClCompile Include="cAnimator.cpp">
       <Filter>Animator</Filter>
@@ -93,6 +96,12 @@
     <ClCompile Include="cPlatformRect.cpp">
       <Filter>GameObjects\Floor</Filter>
     </ClCompile>
+    <ClCompile Include="cCharacter.cpp">
+      <Filter>GameObjects\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="cPhysicsObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cGameManager.h">
@@ -102,7 +111,7 @@
       <Filter>GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="cPlayerCharacter.h">
-      <Filter>GameObjects\Player</Filter>
+      <Filter>GameObjects\Character\PlayerCharacter</Filter>
     </ClInclude>
     <ClInclude Include="cAnimator.h">
       <Filter>Animator</Filter>
@@ -136,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="cPlatformRect.h">
       <Filter>GameObjects\Floor</Filter>
+    </ClInclude>
+    <ClInclude Include="cCharacter.h">
+      <Filter>GameObjects\Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

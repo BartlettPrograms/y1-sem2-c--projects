@@ -1,6 +1,6 @@
 #include "cBoxCollider.h"
 
-cBoxCollider::cBoxCollider(sf::RectangleShape& bounds)
+cBoxCollider::cBoxCollider(sf::FloatRect& bounds)
 	: mBounds(bounds)
 {
 }

@@ -9,7 +9,7 @@ cAnimationIdle::cAnimationIdle()
     mFrameSize = sf::Vector2i(300, 324);
 
     mSprite->setScale(sf::Vector2f(.11f, .11f));
-    mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2) * .11, (mFrameSize.y) * .11));
+    mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2) * .11, (mFrameSize.y / 2) * .11));
 
     mSpriteRect = sf::IntRect(sf::Vector2i(0, 0), mFrameSize);
     mFrameDuration = 0.15f;

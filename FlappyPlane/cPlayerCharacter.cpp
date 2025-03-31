@@ -1,22 +1,15 @@
 #include "cPlayerCharacter.h"
 
 cPlayerCharacter::cPlayerCharacter()
-    : cPhysicsObject()
-    , mBody(sf::Vector2f(24, 24))
-    , cBoxCollider(mBody)
-    , mMaxVelocity(sf::Vector2f(350, 700))
+    : cCharacter(eCharacterType::TYPE_PLAYER, sf::FloatRect(sf::Vector2f(0,0), sf::Vector2f(24, 24)), sf::Vector2f(700, 683), sf::Vector2f(350, 700))
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
-    // Debug Vars
-    , mDebugPositionShape(4)
 {
-    // Initial Position
-    mPosition = sf::Vector2f(700, 683);
     mVelocity = sf::Vector2f(0.0f, 0.0f);
-    mBody.setOrigin(sf::Vector2f(0, -10));
-    mBody.setPosition(mPosition);
-    mBody.setOutlineColor(sf::Color::Red);
-    mBody.setOutlineThickness(2);
-    mBody.setFillColor(sf::Color::Transparent);
+    mDebugColliderShape.setOrigin(sf::Vector2f(0, -10));
+    mDebugColliderShape.setPosition(mPosition);
+    mDebugColliderShape.setOutlineColor(sf::Color::Red);
+    mDebugColliderShape.setOutlineThickness(2);
+    mDebugColliderShape.setFillColor(sf::Color::Transparent);
 
     mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
 }
@@ -31,7 +24,8 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     HandleInput();
 
     // Collider currently follows this objects position
-    mBody.setPosition(mPosition);
+    mBounds.position = mPosition;
+    mDebugPositionShape.setPosition(mPosition);
 
     // No Input
     if (m_vPlayerInputNormalized.x == 0) {   
@@ -110,11 +104,11 @@ void cPlayerCharacter::Update(float DeltaSeconds)
 
     if (mVelocity.x > 1) {
         mPlayerAnimator.FaceRight();
-        mBody.setOrigin(sf::Vector2f(-3, 0));
+        //mBounds.setOrigin(sf::Vector2f(-3, 0));
     }
     else if (mVelocity.x < -1) {
         mPlayerAnimator.FaceLeft();
-        mBody.setOrigin(sf::Vector2f(27, 0));
+        //mBody.setOrigin(sf::Vector2f(27, 0));
     }
 
     // Update Animation
@@ -155,7 +149,7 @@ void cPlayerCharacter::HandleInput()
 
 void cPlayerCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 {
-    mDebugPositionShape.setPosition(mBody.getPosition());
-    renderWindow.draw(mBody); // draw collider
+    mDebugPositionShape.setPosition(mPosition);
+    renderWindow.draw(mDebugColliderShape); // draw collider
     renderWindow.draw(mDebugPositionShape); // draw player ground center
 }

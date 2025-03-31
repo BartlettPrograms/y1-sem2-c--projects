@@ -149,7 +149,9 @@
     <ClCompile Include="cAnimationSliding.cpp" />
     <ClCompile Include="cAnimator.cpp" />
     <ClCompile Include="cBoxCollider.cpp" />
+    <ClCompile Include="cCharacter.cpp" />
     <ClCompile Include="cDrawable.cpp" />
+    <ClCompile Include="cPhysicsObject.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
     <ClCompile Include="cGameManager.cpp" />
     <ClCompile Include="cAnimationIdle.cpp" />
@@ -168,6 +170,7 @@
     <ClInclude Include="cAnimationSliding.h" />
     <ClInclude Include="cAnimator.h" />
     <ClInclude Include="cBoxCollider.h" />
+    <ClInclude Include="cCharacter.h" />
     <ClInclude Include="cDrawable.h" />
     <ClInclude Include="cPlatformRect.h" />
     <ClInclude Include="cGameManager.h" />
