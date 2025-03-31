@@ -1,9 +1,11 @@
 #pragma once
 #include "cDrawable.h"
+#include <string>
 
 class cAnimation : public cDrawable
 {
 public:
+	void LoadSpriteSheet(std::string filePath);
 	virtual void Animate(sf::Vector2f PlayerPosition, float DeltaSeconds) = 0;
 	void SetScale(sf::Vector2f scale);
 protected:

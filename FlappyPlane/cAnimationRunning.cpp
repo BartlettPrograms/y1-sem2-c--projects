@@ -2,9 +2,7 @@
 
 cAnimationRunning::cAnimationRunning()
 {
-    mTexture = sf::Texture("Sprites/StickmanRun.png");
-    mTexture.setSmooth(true);
-    mSprite = new sf::Sprite(mTexture);
+    LoadSpriteSheet("Sprites/StickmanRun.png");
 
     // Animation setup
     mTotalFrames = sf::Vector2u(4, 1);

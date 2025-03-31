@@ -7,17 +7,18 @@ cPlayerCharacter::cPlayerCharacter()
     , mMaxVelocity(sf::Vector2f(350, 700))
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
     // Debug Vars
-    , mDebugPositionShape(3)
+    , mDebugPositionShape(4)
 {
     // Initial Position
     mPosition = sf::Vector2f(700, 683);
     mVelocity = sf::Vector2f(0.0f, 0.0f);
-    mBody.setOrigin(sf::Vector2f(-3, 0));
+    mBody.setOrigin(sf::Vector2f(0, -10));
     mBody.setPosition(mPosition);
     mBody.setOutlineColor(sf::Color::Red);
-    mBody.setOutlineThickness(7);
+    mBody.setOutlineThickness(2);
     mBody.setFillColor(sf::Color::Transparent);
 
+    mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
 }
 
 cPlayerCharacter::~cPlayerCharacter()

@@ -2,16 +2,14 @@
 
 cAnimationSliding::cAnimationSliding()
 {
-    mTexture = sf::Texture("Sprites/StickmanSlide.png");
-    mTexture.setSmooth(true);
-    mSprite = new sf::Sprite(mTexture);
+    LoadSpriteSheet("Sprites/StickmanSlide.png");
 
     // Animation setup
     mTotalFrames = sf::Vector2u(1, 1);
     mFrameSize = sf::Vector2i(254, 298);
-    mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2) / 10, (mFrameSize.y / 2) / 10));
 
     mSprite->setScale(sf::Vector2f(.11f, .11f));
+    mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2) * .11, (mFrameSize.y / 2) * .11));
 
     mSpriteRect = sf::IntRect(sf::Vector2i(0, 0), mFrameSize);
     mFrameDuration = 0.15f;

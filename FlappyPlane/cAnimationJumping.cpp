@@ -2,9 +2,7 @@
 
 cAnimationJumping::cAnimationJumping()
 {
-    mTexture = sf::Texture("Sprites/StickmanJumping.png");
-    mTexture.setSmooth(true);
-    mSprite = new sf::Sprite(mTexture);
+    LoadSpriteSheet("Sprites/StickmanJumping.png");
 
     // Animation setup
     mTotalFrames = sf::Vector2u(3, 1);
