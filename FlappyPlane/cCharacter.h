@@ -16,7 +16,7 @@ class cCharacter : public cPhysicsObject
 public:
 	cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f position, sf::Vector2f _maxVelocity);
 	~cCharacter();
-	void CharacterPhysicsUpdate();
+	void CharacterPhysicsUpdate(float _DeltaSeconds);
 protected:
 	eCharacterType mCharacterType;
 	// Character Animator

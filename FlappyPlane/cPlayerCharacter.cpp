@@ -26,6 +26,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     // Collider currently follows this objects position
     mBounds.position = mPosition;
     mDebugPositionShape.setPosition(mPosition);
+    mDebugColliderShape.setPosition(mPosition);
 
     // No Input
     if (m_vPlayerInputNormalized.x == 0) {   
@@ -64,30 +65,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         }
     }
 
-    // Physics update
-    mVelocity.y += mGravity * DeltaSeconds; // gravity
-    mPosition += mVelocity * DeltaSeconds; // movement
-
-
-    // Clamp position to not fall below ground && grounded reset
-    if (mPosition.y > 768 - 30)
-    {
-        mPlayerAnimator.EndFall();
-        mPosition.y = 768 - 30;
-        mVelocity.y = 0;
-        m_bGrounded = true;
-    }
-    // Clamp x position to keep player inside screen
-    if (mPosition.x < 64)
-    {
-        mPosition.x = 64;
-        mVelocity.x = 0;
-    }
-    else if (mPosition.x > 1302)
-    {
-        mPosition.x = 1302;
-        mVelocity.x = 0;
-    }
+    CharacterPhysicsUpdate(DeltaSeconds);
 
     // Tell animator jump peak has been reached
     if (m_bGrounded == false && mVelocity.y < -1 && mVelocity.y > -20)
@@ -95,13 +73,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         mPlayerAnimator.JumpPeak();
     }
 
-
-    // Clamp velocity to max velocity
-    if (mVelocity.x > mMaxVelocity.x)           { mVelocity.x = mMaxVelocity.x; }
-    if (mVelocity.x < (-1 * mMaxVelocity.x))    { mVelocity.x = (-1 * mMaxVelocity.x); }
-    if (mVelocity.y > mMaxVelocity.y)           { mVelocity.y = mMaxVelocity.y; }
-    if (mVelocity.y < (-1 * mMaxVelocity.y))    { mVelocity.y = (-1 * mMaxVelocity.y); }
-
+    // Face Left/Right
     if (mVelocity.x > 1) {
         mPlayerAnimator.FaceRight();
         //mBounds.setOrigin(sf::Vector2f(-3, 0));
