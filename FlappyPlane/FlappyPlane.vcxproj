@@ -156,6 +156,7 @@
     <ClCompile Include="cEditorDrawTool.cpp" />
     <ClCompile Include="cEditorToolbarUI.cpp" />
     <ClCompile Include="cFileInterface.cpp" />
+    <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
     <ClCompile Include="cPhysicsObject.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
@@ -165,8 +166,8 @@
     <ClCompile Include="cPlayButtonUI.cpp" />
     <ClCompile Include="cPlayerCharacter.cpp" />
     <ClCompile Include="cPlayerInput.cpp" />
-    <ClCompile Include="cRectangleTool.cpp" />
-    <ClCompile Include="cToolButtonRect.cpp" />
+    <ClCompile Include="cRectPlatformTool.cpp" />
+    <ClCompile Include="cRectPlatformToolButton.cpp" />
     <ClCompile Include="cUpdateable.cpp" />
     <ClCompile Include="cUpdateable.h" />
     <ClCompile Include="main.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="cEditorDrawTool.h" />
     <ClInclude Include="cEditorToolbarUI.h" />
     <ClInclude Include="cFileInterface.h" />
+    <ClInclude Include="cLevelEditorManager.h" />
     <ClInclude Include="cMainMenu.h" />
     <ClInclude Include="cPlatformRect.h" />
     <ClInclude Include="cGameManager.h" />
@@ -194,8 +196,8 @@
     <ClInclude Include="cGameObject.h" />
     <ClInclude Include="cPlayerCharacter.h" />
     <ClInclude Include="cAnimationIdle.h" />
-    <ClInclude Include="cRectangleTool.h" />
-    <ClInclude Include="cToolButtonRect.h" />
+    <ClInclude Include="cRectPlatformTool.h" />
+    <ClInclude Include="cRectPlatformToolButton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

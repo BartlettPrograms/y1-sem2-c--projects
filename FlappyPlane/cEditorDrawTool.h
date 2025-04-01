@@ -1,5 +1,5 @@
 #pragma once
-#include "cRectangleTool.h"
+#include "cRectPlatformTool.h"
 //#include "cCircleTool.h"
 //#include "cLineTool.h"
 //#include "cPolygonTool.h"
@@ -8,7 +8,7 @@
 
 class cEditorDrawTool {
 public:
-    DrawTool(sf::RenderTexture& canvasTexture);
+    cEditorDrawTool();
     enum class ToolType {
         ToolMode_None,
         ToolMode_Rect,
@@ -29,7 +29,7 @@ public:
     //StampTool& GetStampTool();
 private:
     ToolType m_ActiveTool = ToolType::ToolMode_Rect;
-    cRectangleTool m_RectangleTool;
+    cRectPlatformTool m_RectangleTool;
     //CircleTool m_CircleTool;
     //LineTool m_LineTool;
     //PolygonTool m_PolygonTool;
@@ -37,6 +37,4 @@ private:
     bool m_IsDrawing = false;
     sf::RectangleShape m_Rectangle;
     sf::Vector2f m_NewShapeSize;
-    // Canvas objects
-    sf::RenderTexture& m_CanvasTexture;
 };

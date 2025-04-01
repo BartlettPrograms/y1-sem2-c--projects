@@ -1,20 +1,20 @@
-#include "cRectangleTool.h"
+#include "cRectPlatformTool.h"
 
 
-cRectangleTool::cRectangleTool()
+cRectPlatformTool::cRectPlatformTool()
 {
 	mShape = new sf::RectangleShape(mRectSize);
 
 	mShape->setFillColor(sf::Color::Blue);
 }
 
-cRectangleTool::~cRectangleTool()
+cRectPlatformTool::~cRectPlatformTool()
 {
 
 }
 
 // Mouse Clicked Function
-void cRectangleTool::UseTool(sf::Vector2f& mousePos)
+void cRectPlatformTool::UseTool(sf::Vector2f& mousePos)
 {
 	// Outer rectangle setup
 	mShape->setOrigin(sf::Vector2f(0, 0));
@@ -27,14 +27,14 @@ void cRectangleTool::UseTool(sf::Vector2f& mousePos)
 }
 
 // Mouse released Function
-void cRectangleTool::CompleteUseTool(sf::RenderTexture& CanvasTexture)
+void cRectPlatformTool::CompleteUseTool(sf::RenderTexture& CanvasTexture)
 {
 	// reset size on complete
 	// Dynamic cast on update bad?
 	dynamic_cast<sf::RectangleShape*>(mShape)->setSize(mRectSize);
 }
 
-void cRectangleTool::UpdateShape(sf::Vector2f mousePos)
+void cRectPlatformTool::UpdateShape(sf::Vector2f mousePos)
 {
 	mShape->setPosition(mousePos);
 }

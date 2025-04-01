@@ -2,6 +2,8 @@
 #include "cUpdateable.h"
 #include "cBoxCollider.h"
 
+class cUpdateable;
+
 class cPhysicsObject : public cGameObject, public cUpdateable, public cBoxCollider
 {
 public:

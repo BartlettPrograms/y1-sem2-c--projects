@@ -28,5 +28,5 @@ public:
 
     // Setters
     void SetPosition(sf::Vector2f position);
-    void SetSize(sf::Vector2f position);
+    void SetSize(sf::Vector2f size);
 };

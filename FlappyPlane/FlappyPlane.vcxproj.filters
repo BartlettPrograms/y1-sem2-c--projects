@@ -143,7 +143,7 @@
     <ClCompile Include="cEditorDrawTool.cpp">
       <Filter>LevelEditor\EditorDrawTool</Filter>
     </ClCompile>
-    <ClCompile Include="cRectangleTool.cpp">
+    <ClCompile Include="cRectPlatformTool.cpp">
       <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
     </ClCompile>
     <ClCompile Include="cBaseDrawTool.cpp">
@@ -152,8 +152,11 @@
     <ClCompile Include="cFileInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cToolButtonRect.cpp">
+    <ClCompile Include="cRectPlatformToolButton.cpp">
       <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
+    </ClCompile>
+    <ClCompile Include="cLevelEditorManager.cpp">
+      <Filter>LevelEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,7 +220,7 @@
     <ClInclude Include="cEditorDrawTool.h">
       <Filter>LevelEditor\EditorDrawTool</Filter>
     </ClInclude>
-    <ClInclude Include="cRectangleTool.h">
+    <ClInclude Include="cRectPlatformTool.h">
       <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
     </ClInclude>
     <ClInclude Include="cBaseDrawTool.h">
@@ -226,8 +229,11 @@
     <ClInclude Include="cFileInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cToolButtonRect.h">
+    <ClInclude Include="cRectPlatformToolButton.h">
       <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
+    </ClInclude>
+    <ClInclude Include="cLevelEditorManager.h">
+      <Filter>LevelEditor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

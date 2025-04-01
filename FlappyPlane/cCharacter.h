@@ -34,8 +34,8 @@ protected:
 	// Collision
 	sf::Vector2f mColliderOffset;
 	// Physics members
-	float mMoveInputMultGrounded = 0.8;
-	float mMoveInputMultAirborne = 0.3;
+	float mMoveInputMultGrounded = 0.8f;
+	float mMoveInputMultAirborne = 0.3f;
 	float mVelocityDampGrounded = 3;
 	float mVelocityDampAirborne = .5;
 	float mVelocityDeadzone = 15;
