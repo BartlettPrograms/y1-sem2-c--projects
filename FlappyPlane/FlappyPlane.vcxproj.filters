@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="GameObjects">
       <UniqueIdentifier>{a2e5976e-5911-46cb-8098-77c1668cb540}</UniqueIdentifier>
     </Filter>
@@ -37,9 +33,6 @@
     <Filter Include="GameObjects\Components">
       <UniqueIdentifier>{1d03ac70-b4e9-42d6-b270-887b63b577c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects\Floor">
-      <UniqueIdentifier>{776fb4e2-e257-4aaa-b9a0-ed02889267e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObjects\Character">
       <UniqueIdentifier>{745473b4-3b85-4afe-965e-9ba51cc37f92}</UniqueIdentifier>
     </Filter>
@@ -54,6 +47,30 @@
     </Filter>
     <Filter Include="UI\Buttons\PlayButton">
       <UniqueIdentifier>{d2c770b7-6cc0-4360-963b-58bbdcdc0084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor">
+      <UniqueIdentifier>{36147ed3-19e9-4516-8677-1f0d0eef9522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\UI">
+      <UniqueIdentifier>{5f5938c2-a11e-47b1-afda-6f1e9db33359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\UI\Toolbar">
+      <UniqueIdentifier>{6266aa6f-6189-4da4-9796-97fd057580d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\EditorDrawTool">
+      <UniqueIdentifier>{2f7b3600-b4d1-40a3-81aa-2b21e95addd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\EditorDrawTool\Tools">
+      <UniqueIdentifier>{dbc56521-79b7-447f-b0ea-0389a7d8c429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\EditorDrawTool\Tools\Rectangle">
+      <UniqueIdentifier>{c7d2b2c3-8a13-402e-b340-f1c830711a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\LevelBlocks">
+      <UniqueIdentifier>{776fb4e2-e257-4aaa-b9a0-ed02889267e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\UI\Toolbar\ToolButtonRect">
+      <UniqueIdentifier>{4ab4122d-d4b3-41c8-a70a-556ddc082d33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -103,7 +120,7 @@
       <Filter>GameObjects\Components</Filter>
     </ClCompile>
     <ClCompile Include="cPlatformRect.cpp">
-      <Filter>GameObjects\Floor</Filter>
+      <Filter>GameObjects\LevelBlocks</Filter>
     </ClCompile>
     <ClCompile Include="cCharacter.cpp">
       <Filter>GameObjects\Character</Filter>
@@ -119,6 +136,24 @@
     </ClCompile>
     <ClCompile Include="cPlayButtonUI.cpp">
       <Filter>UI\Buttons\PlayButton</Filter>
+    </ClCompile>
+    <ClCompile Include="cEditorToolbarUI.cpp">
+      <Filter>LevelEditor\UI\Toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="cEditorDrawTool.cpp">
+      <Filter>LevelEditor\EditorDrawTool</Filter>
+    </ClCompile>
+    <ClCompile Include="cRectangleTool.cpp">
+      <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
+    </ClCompile>
+    <ClCompile Include="cBaseDrawTool.cpp">
+      <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="cFileInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cToolButtonRect.cpp">
+      <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,7 +197,7 @@
       <Filter>GameObjects\Components</Filter>
     </ClInclude>
     <ClInclude Include="cPlatformRect.h">
-      <Filter>GameObjects\Floor</Filter>
+      <Filter>GameObjects\LevelBlocks</Filter>
     </ClInclude>
     <ClInclude Include="cCharacter.h">
       <Filter>GameObjects\Character</Filter>
@@ -175,6 +210,24 @@
     </ClInclude>
     <ClInclude Include="cPlayButtonUI.h">
       <Filter>UI\Buttons\PlayButton</Filter>
+    </ClInclude>
+    <ClInclude Include="cEditorToolbarUI.h">
+      <Filter>LevelEditor\UI\Toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="cEditorDrawTool.h">
+      <Filter>LevelEditor\EditorDrawTool</Filter>
+    </ClInclude>
+    <ClInclude Include="cRectangleTool.h">
+      <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
+    </ClInclude>
+    <ClInclude Include="cBaseDrawTool.h">
+      <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="cFileInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cToolButtonRect.h">
+      <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

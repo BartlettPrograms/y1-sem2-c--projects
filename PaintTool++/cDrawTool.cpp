@@ -1,22 +1,8 @@
-/***********************************************************************
- Bachelor of Software Engineering
- Media Design School
- Auckland
- New Zealand
- (c)
- 2025 Media Design School
- File Name : PaintTool++.exe
- Description : Budget paint tool
- Author : Matthew Bartlett
- Mail : matthew.bartlett@mds.ac.nz
- **************************************************************************/
-
-
-#include "cDrawTool.h"
+#include "cEditorDrawTool.h"
 #include <iostream>
 
 //Constructor
-DrawTool::DrawTool(sf::RenderTexture& canvasTexture)
+cEditorDrawTool::cEditorDrawTool(sf::RenderTexture& canvasTexture)
 	: m_CanvasTexture(canvasTexture),
 	m_Circle(m_NewCircleRadius),
 	m_Rectangle(sf::Vector2f(25.0f, 25.0f)),
@@ -24,16 +10,12 @@ DrawTool::DrawTool(sf::RenderTexture& canvasTexture)
 	m_NewShapeSize(sf::Vector2f(0.0f, 0.0f))
 {
 	// Set initial properties for member shapes
-	m_Circle.setFillColor(sf::Color::Green);
-	m_Circle.setOrigin(sf::Vector2f(12.5, 12.5));
-	m_Circle.setRadius(m_NewCircleRadius);
-	m_Circle.setScale(sf::Vector2f(1, 1));
 	m_Rectangle.setPosition(sf::Vector2f(2000, 2000));
 	m_Rectangle.setFillColor(sf::Color::Blue);
 	m_Rectangle.setOrigin(sf::Vector2f(m_Rectangle.getSize().x / 2, m_Rectangle.getSize().y / 2));
 }
 // SetDrawTool to Rect, cricle, square
-void DrawTool::SetTool(ToolType type)
+void cEditorDrawTool::SetTool(ToolType type)
 {
 	m_ActiveTool = type;
 }
@@ -45,7 +27,7 @@ void DrawTool::SetColor(sf::Color color)
 	m_PolygonTool.SetColor(color);
 }
 // Mouse Button Pressed function
-void DrawTool::UseTool(sf::RenderWindow& window, sf::Vector2f& mousePos) {
+void cEditorDrawTool::UseTool(sf::RenderWindow& window, sf::Vector2f& mousePos) {
 	// User draws out what the user wants to add to the board
 	m_IsDrawing = true;
 	switch (m_ActiveTool)
@@ -68,7 +50,7 @@ void DrawTool::UseTool(sf::RenderWindow& window, sf::Vector2f& mousePos) {
 	}
 }
 // Mouse Button Released function
-void DrawTool::DrawToolToBoard(sf::RenderWindow& window)
+void cEditorDrawTool::DrawToolToBoard(sf::RenderWindow& window)
 {
 	m_IsDrawing = false;
 	// Write what the user has drawn to the board
@@ -90,7 +72,7 @@ void DrawTool::DrawToolToBoard(sf::RenderWindow& window)
 	m_CanvasTexture.display();
 }
 // ToolGraphic follow MousePosition
-void DrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos)
+void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos)
 {
 	// polygon tool has its own move cursor conditions
 	if (m_ActiveTool == DrawTool::ToolType::ToolMode_Polygon)
@@ -118,7 +100,7 @@ void DrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos)
 	}
 }
 // Change line tool thickness
-void DrawTool::ChangeLineToolThickness(float changeValueBy)
+void cEditorDrawTool::ChangeLineToolThickness(float changeValueBy)
 {
 	float newThickness = m_LineToolThickness + changeValueBy;
 
@@ -133,12 +115,12 @@ void DrawTool::ChangeLineToolThickness(float changeValueBy)
 	m_LineToolThickness = newThickness;
 }
 // Get line tool thickness
-float DrawTool::GetLineToolThickness()
+float cEditorDrawTool::GetLineToolThickness()
 {
 	return m_LineToolThickness;
 }
 
-void DrawTool::DrawCurrentToolToBoard(sf::RenderWindow& window)
+void cEditorDrawTool::DrawCurrentToolToBoard(sf::RenderWindow& window)
 {
 	switch (m_ActiveTool)
 	{
@@ -160,13 +142,9 @@ void DrawTool::DrawCurrentToolToBoard(sf::RenderWindow& window)
 	}
 }
 
-void DrawTool::OnRightMouseClick()
+void cEditorDrawTool::OnRightMouseClick()
 {
-	// complete polygon structure only
-	if (m_ActiveTool == DrawTool::ToolType::ToolMode_Polygon)
-	{
-		m_PolygonTool.CompletePolygonStructure(m_LineToolThickness, m_CanvasTexture);
-	}
+	
 }
 
 StampTool& DrawTool::GetStampTool()
