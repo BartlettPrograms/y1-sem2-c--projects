@@ -13,6 +13,11 @@ public:
 	void HandleInput();
 	// Collision
 	cBoxCollider& GetCollider() { return *this; }
+
+	// Player Values
+	static const sf::Vector2f PLAYER_SIZE;
+	static const sf::FloatRect PLAYER_BOUNDS;
+	static const sf::Vector2f PLAYER_MAX_VELOCITY;
 private:
 	// Player Input
 	cPlayerInput mPlayerInput;
