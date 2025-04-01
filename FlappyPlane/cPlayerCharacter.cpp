@@ -1,11 +1,12 @@
 #include "cPlayerCharacter.h"
 
-const sf::Vector2f cPlayerCharacter::PLAYER_SIZE = sf::Vector2f(24, 24);
-const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(sf::Vector2f(500, 500), PLAYER_SIZE);
+const sf::Vector2f cPlayerCharacter::PLAYER_SIZE = sf::Vector2f(24, 32);
+const sf::Vector2f cPlayerCharacter::PLAYER_COLLIDER_OFFSET = sf::Vector2f(0, -16);
+const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(PLAYER_COLLIDER_OFFSET, PLAYER_SIZE);
 const sf::Vector2f cPlayerCharacter::PLAYER_MAX_VELOCITY = sf::Vector2f(350, 700);
 
-cPlayerCharacter::cPlayerCharacter()
-    : cCharacter(eCharacterType::TYPE_PLAYER, PLAYER_BOUNDS, sf::Vector2f(700, 683), PLAYER_MAX_VELOCITY)
+cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position)
+    : cCharacter(eCharacterType::TYPE_PLAYER, _position, PLAYER_BOUNDS, PLAYER_COLLIDER_OFFSET, PLAYER_MAX_VELOCITY)
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);

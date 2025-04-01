@@ -5,7 +5,7 @@
 class cPlayerCharacter : public cCharacter
 {
 public:
-	cPlayerCharacter();
+	cPlayerCharacter(sf::Vector2f _position);
 	~cPlayerCharacter();
 	void Update(float DeltaSeconds);
 	void Draw(sf::RenderWindow& renderWindow) override;
@@ -18,6 +18,7 @@ public:
 	static const sf::Vector2f PLAYER_SIZE;
 	static const sf::FloatRect PLAYER_BOUNDS;
 	static const sf::Vector2f PLAYER_MAX_VELOCITY;
+	static const sf::Vector2f PLAYER_COLLIDER_OFFSET;
 private:
 	// Player Input
 	cPlayerInput mPlayerInput;

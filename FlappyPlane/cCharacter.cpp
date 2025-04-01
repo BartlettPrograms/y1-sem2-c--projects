@@ -1,6 +1,11 @@
 #include "cCharacter.h"
 
-cCharacter::cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f position, sf::Vector2f _maxVelocity)
+cCharacter::cCharacter(
+	eCharacterType type, 
+	sf::Vector2f position, 
+	sf::FloatRect bounds,
+	sf::Vector2f colliderOffset, 
+	sf::Vector2f _maxVelocity)
 	: cPhysicsObject(bounds, _maxVelocity)
 	, mDebugColliderShape(bounds.size)
 	, mDebugPositionShape(4)
@@ -8,6 +13,7 @@ cCharacter::cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f p
 {
 	mDebugColliderShape.setOrigin(bounds.size / 2.0f);
 	mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
+	mColliderOffset = colliderOffset;
 }
 
 cCharacter::~cCharacter()
@@ -20,27 +26,27 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (!m_bGrounded) {
 		mVelocity.y += mGravity * _DeltaSeconds; // gravity
 	}
-	mBounds.position += mVelocity * _DeltaSeconds; // movement
+	mPosition += mVelocity * _DeltaSeconds; // movement
 
 
 	// Clamp position to not fall below ground && grounded reset
-	if (mBounds.position.y > 768 - 30)
+	if (mPosition.y > 750)
 	{
 		mPlayerAnimator.EndFall();
-		mBounds.position.y = 768 - 30;
+		mPosition.y = 750;
 		mVelocity.y = 0;
 		m_bGrounded = true;
 	}
 
 	// Clamp x position to keep player inside screen
-	if (mBounds.position.x < 64)
+	if (mPosition.x < 64)
 	{
-		mBounds.position.x = 64;
+		mPosition.x = 64;
 		mVelocity.x = 0;
 	}
-	else if (mBounds.position.x > 1302)
+	else if (mPosition.x > 1302)
 	{
-		mBounds.position.x = 1302;
+		mPosition.x = 1302;
 		mVelocity.x = 0;
 	}
 
@@ -50,20 +56,14 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (mVelocity.y > mMaxVelocity.y) { mVelocity.y = mMaxVelocity.y; }
 	if (mVelocity.y < (-1 * mMaxVelocity.y)) { mVelocity.y = (-1 * mMaxVelocity.y); }
 
-
-	// Position follows collider
-	mPosition.x = mBounds.position.x;
-	mPosition.y = mBounds.position.y;
+	mBounds.position = mPosition + mColliderOffset;
 }
 
 
 void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 {
-	//std::cout << "Collider Position x: " << mBounds.position.x << "  y: " << mBounds.position.y << std::endl;
-	//std::cout << "Collider size x: " << mBounds.size.x << "  y: " << mBounds.size.y << std::endl;
-
-	mDebugPositionShape.setPosition(mBounds.position);
 	mDebugColliderShape.setPosition(mBounds.position);
+	mDebugPositionShape.setPosition(mPosition);
 	renderWindow.draw(mDebugColliderShape); // draw collider
 	renderWindow.draw(mDebugPositionShape); // draw player ground center
 }

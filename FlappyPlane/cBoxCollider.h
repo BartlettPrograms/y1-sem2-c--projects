@@ -8,7 +8,7 @@ public:
 	cBoxCollider(sf::FloatRect bounds);
 	~cBoxCollider();
 
-	void Move(float dx, float dy); // { mBounds.Move(dx, dy); }
+	void Move(float dx, float dy);
 
 	bool CheckCollision(cBoxCollider& other, float push);
 	sf::Vector2f GetPosition() { return mBounds.position; }

@@ -14,8 +14,15 @@ enum eCharacterType {
 class cCharacter : public cPhysicsObject
 {
 public:
-	cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f position, sf::Vector2f _maxVelocity);
+	cCharacter(
+		eCharacterType type, 
+		sf::Vector2f position, 
+		sf::FloatRect bounds,
+		sf::Vector2f colliderOffset,
+		sf::Vector2f _maxVelocity
+	);
 	~cCharacter();
+
 	void CharacterPhysicsUpdate(float _DeltaSeconds);
 	void DrawDebug(sf::RenderWindow& renderWindow);
 	bool IsGrounded() const { return m_bGrounded; }
@@ -25,7 +32,7 @@ protected:
 	// Character Animator
 	cAnimator mPlayerAnimator;
 	// Collision
-	
+	sf::Vector2f mColliderOffset;
 	// Physics members
 	float mMoveInputMultGrounded = 0.8;
 	float mMoveInputMultAirborne = 0.3;
