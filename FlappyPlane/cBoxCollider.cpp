@@ -11,6 +11,12 @@ cBoxCollider::~cBoxCollider()
 {
 }
 
+void cBoxCollider::Move(float dx, float dy)
+{
+	mBounds.position.x += dx;
+	mBounds.position.y += dy;
+}
+
 bool cBoxCollider::CheckCollision(cBoxCollider& other, float push)
 {
 	//std::cout << "Collider x: " << mBounds.position.x << "  y: " << mBounds.position.y << std::endl;
@@ -28,7 +34,7 @@ bool cBoxCollider::CheckCollision(cBoxCollider& other, float push)
 	if (intersectX < 0.0f && intersectY < 0.0f)
 	{
 		std::cout << "Collision Detected!!" << std::endl;
-		/*
+		
 		push = std::min(std::max(push, 0.0f), 1.0f);    /// COOL CLAMP CODE!!!
 
 		if (intersectX > intersectY)
@@ -55,7 +61,6 @@ bool cBoxCollider::CheckCollision(cBoxCollider& other, float push)
 		}
 
 		return true;
-		*/
 	}
 
 	return false;

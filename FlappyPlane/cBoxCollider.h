@@ -8,6 +8,8 @@ public:
 	cBoxCollider(sf::FloatRect bounds);
 	~cBoxCollider();
 
+	void Move(float dx, float dy); // { mBounds.Move(dx, dy); }
+
 	bool CheckCollision(cBoxCollider& other, float push);
 	sf::Vector2f GetPosition() { return mBounds.position; }
 	sf::Vector2f GetHalfSize() { return mBounds.size / 2.0f; }

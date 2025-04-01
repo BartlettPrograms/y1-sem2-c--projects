@@ -5,7 +5,7 @@ cPlatformRect::cPlatformRect(sf::FloatRect bounds)
 {
 	mBody.setPosition(bounds.position);
 	mBody.setSize(bounds.size);
-	//mBody.setOrigin(size / 2.0f);
+	mBody.setOrigin(bounds.size / 2.0f);
 }
 
 cPlatformRect::~cPlatformRect()

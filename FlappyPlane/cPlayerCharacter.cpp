@@ -1,7 +1,7 @@
 #include "cPlayerCharacter.h"
 
 const sf::Vector2f cPlayerCharacter::PLAYER_SIZE = sf::Vector2f(24, 24);
-const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(sf::Vector2f(0, 0), PLAYER_SIZE);
+const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(sf::Vector2f(500, 500), PLAYER_SIZE);
 const sf::Vector2f cPlayerCharacter::PLAYER_MAX_VELOCITY = sf::Vector2f(350, 700);
 
 cPlayerCharacter::cPlayerCharacter()
@@ -9,7 +9,7 @@ cPlayerCharacter::cPlayerCharacter()
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
-    mDebugColliderShape.setOrigin(sf::Vector2f(0, -10));
+    mDebugColliderShape.setOrigin(sf::Vector2f(0, 0));
     mDebugColliderShape.setPosition(mPosition);
     mDebugColliderShape.setOutlineColor(sf::Color::Red);
     mDebugColliderShape.setOutlineThickness(2);

@@ -15,29 +15,29 @@ cCharacter::~cCharacter()
 
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
-		// Physics update
-	//mVelocity.y += mGravity * _DeltaSeconds; // gravity
-	mPosition += mVelocity * _DeltaSeconds; // movement
+	// Physics update
+	mVelocity.y += mGravity * _DeltaSeconds; // gravity
+	mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
 	// Clamp position to not fall below ground && grounded reset
-	if (mPosition.y > 768 - 30)
+	if (mBounds.position.y > 768 - 30)
 	{
 		mPlayerAnimator.EndFall();
-		mPosition.y = 768 - 30;
+		mBounds.position.y = 768 - 30;
 		mVelocity.y = 0;
 		m_bGrounded = true;
 	}
 
 	// Clamp x position to keep player inside screen
-	if (mPosition.x < 64)
+	if (mBounds.position.x < 64)
 	{
-		mPosition.x = 64;
+		mBounds.position.x = 64;
 		mVelocity.x = 0;
 	}
-	else if (mPosition.x > 1302)
+	else if (mBounds.position.x > 1302)
 	{
-		mPosition.x = 1302;
+		mBounds.position.x = 1302;
 		mVelocity.x = 0;
 	}
 
@@ -48,9 +48,9 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (mVelocity.y < (-1 * mMaxVelocity.y)) { mVelocity.y = (-1 * mMaxVelocity.y); }
 
 
-	// Collider currently follows this objects position
-	mBounds.position.x = mPosition.x;
-	mBounds.position.y = mPosition.y;
+	// Position follows collider
+	mPosition.x = mBounds.position.x;
+	mPosition.y = mBounds.position.y;
 }
 
 
