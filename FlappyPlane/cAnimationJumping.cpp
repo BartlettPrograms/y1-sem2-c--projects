@@ -5,7 +5,7 @@ cAnimationJumping::cAnimationJumping()
     // Animation setup
     mTotalFrames = sf::Vector2u(3, 1);
     mFrameSize = sf::Vector2i(300, 313);
-    LoadSpriteSheet("Sprites/StickmanJumping.png");
+    LoadSpriteSheet("Assets/Sprites/StickmanJumping.png");
     mFrameDuration = 0.15f;
     mAnimationTime = 0.0f;
     mCurrentFrame = sf::Vector2u(0, 0);

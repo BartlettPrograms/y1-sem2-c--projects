@@ -20,7 +20,6 @@ void cGameManager::GameTick()
 
     mPlatform1.Update(mPlayerCharacter);
     mPlatform2.Update(mPlayerCharacter);
-    //mPlatform2.GetCollider().CheckCollision(mPlayerCharacter.GetCollider(), 1.0f);
 
     mPlatform1.Draw(mGameWindow);
     mPlatform2.Draw(mGameWindow);

@@ -46,6 +46,15 @@
     <Filter Include="GameObjects\Character\PlayerCharacter">
       <UniqueIdentifier>{11631855-183d-4cc7-b95b-a7de024f4c17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{b7528980-bd45-4f06-9a1b-501e44b37183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Buttons">
+      <UniqueIdentifier>{01a31c0b-0d7d-45ca-8bc1-39f65c7ec81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Buttons\PlayButton">
+      <UniqueIdentifier>{d2c770b7-6cc0-4360-963b-58bbdcdc0084}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -102,6 +111,15 @@
     <ClCompile Include="cPhysicsObject.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="cMainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cButtonUI.cpp">
+      <Filter>UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlayButtonUI.cpp">
+      <Filter>UI\Buttons\PlayButton</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cGameManager.h">
@@ -148,6 +166,15 @@
     </ClInclude>
     <ClInclude Include="cCharacter.h">
       <Filter>GameObjects\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="cMainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cButtonUI.h">
+      <Filter>UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlayButtonUI.h">
+      <Filter>UI\Buttons\PlayButton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

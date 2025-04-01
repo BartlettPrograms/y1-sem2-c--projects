@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "cGameManager.h"
-#include "cPlayerCharacter.h"
+#include "cMainMenu.h"
 
 int main()
 {
@@ -9,6 +9,7 @@ int main()
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
 
+    cMainMenu MainMenu(window);
     cGameManager GameManager(window);
 
     while (window.isOpen())
@@ -22,6 +23,7 @@ int main()
         window.clear();
         window.draw(Background);
         GameManager.GameTick();
+        MainMenu.Update();
         window.display();
     }
 

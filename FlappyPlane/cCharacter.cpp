@@ -26,27 +26,27 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (!m_bGrounded) {
 		mVelocity.y += mGravity * _DeltaSeconds; // gravity
 	}
-	mPosition += mVelocity * _DeltaSeconds; // movement
+	mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
 	// Clamp position to not fall below ground && grounded reset
-	if (mPosition.y > 750)
+	if (mBounds.position.y > 750)
 	{
 		mPlayerAnimator.EndFall();
-		mPosition.y = 750;
+		mBounds.position.y = 750;
 		mVelocity.y = 0;
 		m_bGrounded = true;
 	}
 
 	// Clamp x position to keep player inside screen
-	if (mPosition.x < 64)
+	if (mBounds.position.x < 64)
 	{
-		mPosition.x = 64;
+		mBounds.position.x = 64;
 		mVelocity.x = 0;
 	}
-	else if (mPosition.x > 1302)
+	else if (mBounds.position.x > 1302)
 	{
-		mPosition.x = 1302;
+		mBounds.position.x = 1302;
 		mVelocity.x = 0;
 	}
 
@@ -56,7 +56,7 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (mVelocity.y > mMaxVelocity.y) { mVelocity.y = mMaxVelocity.y; }
 	if (mVelocity.y < (-1 * mMaxVelocity.y)) { mVelocity.y = (-1 * mMaxVelocity.y); }
 
-	mBounds.position = mPosition + mColliderOffset;
+	mPosition = mBounds.position - mColliderOffset;
 }
 
 
