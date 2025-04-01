@@ -14,7 +14,7 @@ enum eCharacterType {
 class cCharacter : public cPhysicsObject
 {
 public:
-	cCharacter(eCharacterType type, sf::FloatRect& bounds, sf::Vector2f position, sf::Vector2f _maxVelocity);
+	cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f position, sf::Vector2f _maxVelocity);
 	~cCharacter();
 	void CharacterPhysicsUpdate(float _DeltaSeconds);
 	void DrawDebug(sf::RenderWindow& renderWindow);

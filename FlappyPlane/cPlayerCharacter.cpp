@@ -1,7 +1,7 @@
 #include "cPlayerCharacter.h"
 
 cPlayerCharacter::cPlayerCharacter()
-    : cCharacter(eCharacterType::TYPE_PLAYER, mBounds, sf::Vector2f(700, 683), sf::Vector2f(350, 700))
+    : cCharacter(eCharacterType::TYPE_PLAYER, sf::FloatRect(sf::Vector2f(0,0), sf::Vector2f(24,24)), sf::Vector2f(700, 683), sf::Vector2f(350, 700))
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
@@ -10,7 +10,6 @@ cPlayerCharacter::cPlayerCharacter()
     mDebugColliderShape.setOutlineColor(sf::Color::Red);
     mDebugColliderShape.setOutlineThickness(2);
     mDebugColliderShape.setFillColor(sf::Color::Transparent);
-
     mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
 }
 
