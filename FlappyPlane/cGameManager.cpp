@@ -18,8 +18,9 @@ void cGameManager::GameTick()
     RefreshDeltaTime();
     mPlayerCharacter.Update(mDeltaSeconds);
 
-    mPlatform1.GetCollider().CheckCollision(mPlayerCharacter.GetCollider(), 1.0f);
-    mPlatform2.GetCollider().CheckCollision(mPlayerCharacter.GetCollider(), 1.0f);
+    mPlatform1.Update(mPlayerCharacter);
+    mPlatform2.Update(mPlayerCharacter);
+    //mPlatform2.GetCollider().CheckCollision(mPlayerCharacter.GetCollider(), 1.0f);
 
     mPlatform1.Draw(mGameWindow);
     mPlatform2.Draw(mGameWindow);

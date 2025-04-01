@@ -1,7 +1,7 @@
 #pragma once
 #include "cGameObject.h"
 #include "cBoxCollider.h"
-#include "cPlayerCharacter.h"
+#include "cCharacter.h"
 
 class cPlatformRect : public cGameObject, cBoxCollider
 {
@@ -10,6 +10,7 @@ public:
 	~cPlatformRect();
 
 	void Draw(sf::RenderWindow& window) override;
+	void Update(cCharacter& character);
 	cBoxCollider& GetCollider() { return *this; };
 private:
 	sf::RectangleShape mBody;

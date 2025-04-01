@@ -11,7 +11,7 @@ void cAnimation::LoadSpriteSheet(std::string filePath)
 	mSprite = new sf::Sprite(mTexture);
 
 	mSprite->setScale(sf::Vector2f(.11f, .11f));
-	mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2) * .11, (mFrameSize.y) * .11));
+	mSprite->setOrigin(sf::Vector2f((mFrameSize.x / 2), (mFrameSize.y)));
 
 	mSpriteRect = sf::IntRect(sf::Vector2i(0, 0), mFrameSize);
 	mSprite->setTextureRect(mSpriteRect);

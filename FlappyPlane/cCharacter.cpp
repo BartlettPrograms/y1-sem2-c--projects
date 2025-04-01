@@ -6,7 +6,8 @@ cCharacter::cCharacter(eCharacterType type, sf::FloatRect bounds, sf::Vector2f p
 	, mDebugPositionShape(4)
 	, mCharacterType(type)
 {
-
+	mDebugColliderShape.setOrigin(bounds.size / 2.0f);
+	mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
 }
 
 cCharacter::~cCharacter()
@@ -16,7 +17,9 @@ cCharacter::~cCharacter()
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
 	// Physics update
-	mVelocity.y += mGravity * _DeltaSeconds; // gravity
+	if (!m_bGrounded) {
+		mVelocity.y += mGravity * _DeltaSeconds; // gravity
+	}
 	mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
@@ -63,4 +66,11 @@ void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 	mDebugColliderShape.setPosition(mBounds.position);
 	renderWindow.draw(mDebugColliderShape); // draw collider
 	renderWindow.draw(mDebugPositionShape); // draw player ground center
+}
+
+void cCharacter::SetGrounded(bool isGrounded)
+{
+	mPlayerAnimator.EndFall();
+	mVelocity.y = 0;
+	m_bGrounded = true;
 }

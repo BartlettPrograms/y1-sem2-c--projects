@@ -9,13 +9,10 @@ cPlayerCharacter::cPlayerCharacter()
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
-    mDebugColliderShape.setOrigin(sf::Vector2f(0, 0));
     mDebugColliderShape.setPosition(mPosition);
     mDebugColliderShape.setOutlineColor(sf::Color::Red);
     mDebugColliderShape.setOutlineThickness(2);
     mDebugColliderShape.setFillColor(sf::Color::Transparent);
-
-    mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
 }
 
 cPlayerCharacter::~cPlayerCharacter()
@@ -75,11 +72,9 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     // Face Left/Right
     if (mVelocity.x > 1) {
         mPlayerAnimator.FaceRight();
-        //mBounds.setOrigin(sf::Vector2f(-3, 0));
     }
     else if (mVelocity.x < -1) {
         mPlayerAnimator.FaceLeft();
-        //mBody.setOrigin(sf::Vector2f(27, 0));
     }
 
     // Update Animation

@@ -18,6 +18,8 @@ public:
 	~cCharacter();
 	void CharacterPhysicsUpdate(float _DeltaSeconds);
 	void DrawDebug(sf::RenderWindow& renderWindow);
+	bool IsGrounded() const { return m_bGrounded; }
+	void SetGrounded(bool isGrounded);
 protected:
 	eCharacterType mCharacterType;
 	// Character Animator
@@ -31,7 +33,7 @@ protected:
 	float mVelocityDampAirborne = .5;
 	float mVelocityDeadzone = 15;
 	// Character Movement
-	bool m_bGrounded = true;
+	bool m_bGrounded = false;
 	float m_fJumpImpulse = 300;
 	// Debug
 	sf::RectangleShape mDebugColliderShape;
