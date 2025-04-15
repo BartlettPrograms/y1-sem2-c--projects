@@ -161,6 +161,9 @@
     <ClCompile Include="cMainMenu.cpp">
       <Filter>UI\Main Menu</Filter>
     </ClCompile>
+    <ClCompile Include="cLevelPlatformsList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cGameManager.h">
@@ -237,6 +240,9 @@
     </ClInclude>
     <ClInclude Include="cMainMenu.h">
       <Filter>UI\Main Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="cLevelPlatformsList.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

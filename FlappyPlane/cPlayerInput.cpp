@@ -2,9 +2,6 @@
 #include <iostream>
 
 cPlayerInput::cPlayerInput()
-    : m_bSpacePressed(false)
-    , m_bLeftArrowPressed(false)
-    , m_bRightArrowPressed(false)
 {
 }
 
@@ -54,4 +51,9 @@ bool cPlayerInput::IsLeftArrowPressed() const
 bool cPlayerInput::IsRightArrowPressed() const
 {
     return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right);
+}
+
+bool cPlayerInput::IsLeftClickPressed() const
+{
+    return sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);
 }

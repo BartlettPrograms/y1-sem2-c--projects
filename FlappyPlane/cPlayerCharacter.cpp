@@ -5,8 +5,9 @@ const sf::Vector2f cPlayerCharacter::PLAYER_COLLIDER_OFFSET = sf::Vector2f(0, -1
 const sf::FloatRect cPlayerCharacter::PLAYER_BOUNDS = sf::FloatRect(PLAYER_COLLIDER_OFFSET, PLAYER_SIZE);
 const sf::Vector2f cPlayerCharacter::PLAYER_MAX_VELOCITY = sf::Vector2f(350, 700);
 
-cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position)
+cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerInput)
     : cCharacter(eCharacterType::TYPE_PLAYER, _position, PLAYER_BOUNDS, PLAYER_COLLIDER_OFFSET, PLAYER_MAX_VELOCITY)
+    , mPlayerInput(playerInput)
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);

@@ -7,6 +7,7 @@
 class cEditorToolbarUI {
 public:
     cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _DrawTool);
+    void Update();
     void Draw();
 private:
     cEditorDrawTool& UserDrawTool;

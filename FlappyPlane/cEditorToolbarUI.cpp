@@ -8,12 +8,16 @@ cEditorToolbarUI::cEditorToolbarUI(sf::RenderWindow& window, cEditorDrawTool& _D
 {
 	mToolbarWindow.setPosition(mMainWindow.getPosition() + sf::Vector2i(mMainWindow.getSize().x + 2, 0));
 	// load image
-	m_BackgroundTexture.loadFromFile("Sprites/UI/Toolbar/ToolbarBackground.png");
+	m_BackgroundTexture.loadFromFile("Assets/Sprites/UI/Toolbar/ToolbarBackground.png");
 	m_UIBackground = new sf::Sprite(m_BackgroundTexture);
 }
 
+void cEditorToolbarUI::Update()
+{
+	ButtonRectangleTool.Update(mToolbarWindow);
+}
+
 void cEditorToolbarUI::Draw() {
-	mMainWindow.draw(*m_UIBackground);
-	ButtonRectangleTool.Update(mMainWindow);
-	ButtonRectangleTool.Draw(mMainWindow);
+	mToolbarWindow.draw(*m_UIBackground);
+	ButtonRectangleTool.Draw(mToolbarWindow);
 }

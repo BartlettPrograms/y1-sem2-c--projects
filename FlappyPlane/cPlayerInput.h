@@ -9,9 +9,5 @@ public:
     bool IsSpacePressed() const;
     bool IsLeftArrowPressed() const;
     bool IsRightArrowPressed() const;
-
-private:
-    bool m_bSpacePressed;
-    bool m_bLeftArrowPressed;
-    bool m_bRightArrowPressed;
+    bool IsLeftClickPressed() const;
 };

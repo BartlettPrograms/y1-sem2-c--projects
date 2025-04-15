@@ -7,7 +7,7 @@
 class cGameManager
 {
 public:
-	cGameManager(sf::RenderWindow& window);
+	cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput);
 	~cGameManager();
 	void GameTick();
 	
@@ -20,6 +20,7 @@ private:
 	// Render Window
 	sf::RenderWindow& mGameWindow;
 	// Player Character
+	cPlayerInput& mPlayerInput;
 	cPlayerCharacter mPlayerCharacter;
 	// Platform
 	cPlatformRect mPlatform1;

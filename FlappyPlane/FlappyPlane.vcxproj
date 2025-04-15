@@ -157,6 +157,7 @@
     <ClCompile Include="cEditorToolbarUI.cpp" />
     <ClCompile Include="cFileInterface.cpp" />
     <ClCompile Include="cLevelEditorManager.cpp" />
+    <ClCompile Include="cLevelPlatformsList.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
     <ClCompile Include="cPhysicsObject.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="cEditorToolbarUI.h" />
     <ClInclude Include="cFileInterface.h" />
     <ClInclude Include="cLevelEditorManager.h" />
+    <ClInclude Include="cLevelPlatformsList.h" />
     <ClInclude Include="cMainMenu.h" />
     <ClInclude Include="cPlatformRect.h" />
     <ClInclude Include="cGameManager.h" />

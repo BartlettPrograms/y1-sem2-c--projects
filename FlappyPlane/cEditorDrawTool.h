@@ -1,14 +1,11 @@
 #pragma once
 #include "cRectPlatformTool.h"
-//#include "cCircleTool.h"
-//#include "cLineTool.h"
-//#include "cPolygonTool.h"
-//#include "cStampTool.h"
 #include <SFML/Graphics.hpp>
+#include "cPlayerInput.h"
 
 class cEditorDrawTool {
 public:
-    cEditorDrawTool(sf::RenderWindow& mainWindow);
+    cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& playerInput);
     enum class ToolType {
         ToolMode_None,
         ToolMode_Rect,
@@ -21,8 +18,9 @@ public:
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
     void UseTool(sf::Vector2f& mousePos);
     void DrawCursorToScreen(sf::RenderWindow& window);
-    void PlacePlatform();
+    void CompleteUseTool();
 private:
+    cPlayerInput& mPlayerInput;
     sf::RenderWindow& mMainWindow;
     cBaseDrawTool* mActiveTool;
     cRectPlatformTool mRectangleTool;

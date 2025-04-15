@@ -33,7 +33,6 @@ bool cBoxCollider::CheckCollision(cBoxCollider& other, float push)
 
 	if (intersectX < 0.0f && intersectY < 0.0f)
 	{
-		std::cout << "Collision Detected!!" << std::endl;
 		
 		push = std::min(std::max(push, 0.0f), 1.0f);    /// COOL CLAMP CODE!!!
 

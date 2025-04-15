@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PaintTool++", "PaintTool++\PaintTool++.vcxproj", "{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FlappyPlane", "FlappyPlane\FlappyPlane.vcxproj", "{623CCC94-731D-4FBA-99D0-4179A05FABEA}"
 EndProject
 Global
@@ -15,14 +13,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Debug|x64.ActiveCfg = Debug|x64
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Debug|x64.Build.0 = Debug|x64
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Debug|x86.ActiveCfg = Debug|Win32
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Debug|x86.Build.0 = Debug|Win32
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Release|x64.ActiveCfg = Release|x64
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Release|x64.Build.0 = Release|x64
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Release|x86.ActiveCfg = Release|Win32
-		{ECD5A0D9-92BB-4125-A07B-682C4D5AB06E}.Release|x86.Build.0 = Release|Win32
 		{623CCC94-731D-4FBA-99D0-4179A05FABEA}.Debug|x64.ActiveCfg = Debug|x64
 		{623CCC94-731D-4FBA-99D0-4179A05FABEA}.Debug|x64.Build.0 = Debug|x64
 		{623CCC94-731D-4FBA-99D0-4179A05FABEA}.Debug|x86.ActiveCfg = Debug|Win32
