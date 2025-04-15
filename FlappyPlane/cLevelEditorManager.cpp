@@ -1,9 +1,10 @@
 #include "cLevelEditorManager.h"
 
-cLevelEditorManager::cLevelEditorManager(sf::RenderWindow& mainWindow, cPlayerInput& playerInput)
+cLevelEditorManager::cLevelEditorManager(sf::RenderWindow& mainWindow, cPlayerInput& playerInput, cLevelPlatformsList& mPlatformsList)
 	: mMainWindow(mainWindow)
 	, mDrawTool(mainWindow, playerInput)
 	, mToolbar(mainWindow, mDrawTool)
+	, mPlatformsList(mPlatformsList)
 {
 
 }

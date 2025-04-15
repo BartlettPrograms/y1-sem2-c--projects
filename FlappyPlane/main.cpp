@@ -11,15 +11,14 @@ int main()
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
 
-    // Level list
-    cLevelPlatformsList LevelList;
+    // Shared Level list
+    cLevelPlatformsList LevelPlatformsList;
 
-    // Create Game Objects
+    // Create Game managers
     cPlayerInput PlayerInput;
-    cGameManager GameManager(window, PlayerInput);
-
+    cGameManager GameManager(window, PlayerInput, LevelPlatformsList);
     // Create Level Editor
-    cLevelEditorManager LevelEditor(window, PlayerInput);
+    cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList);
 
     // Create Main Menu
     cMainMenu MainMenu(window);

@@ -1,13 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "cPlayerCharacter.h"
-#include "cPlatformRect.h"
+#include "cLevelPlatformsList.h"
 #include <iostream>
 
 class cGameManager
 {
 public:
-	cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput);
+	cGameManager(sf::RenderWindow& window, cPlayerInput& playerInput, cLevelPlatformsList& platformsList);
 	~cGameManager();
 	void GameTick();
 	
@@ -22,7 +22,6 @@ private:
 	// Player Character
 	cPlayerInput& mPlayerInput;
 	cPlayerCharacter mPlayerCharacter;
-	// Platform
-	cPlatformRect mPlatform1;
-	cPlatformRect mPlatform2;
+	// Platforms
+	cLevelPlatformsList& mPlatformsList;
 };

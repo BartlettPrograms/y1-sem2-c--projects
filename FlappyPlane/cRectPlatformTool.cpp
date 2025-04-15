@@ -8,11 +8,6 @@ cRectPlatformTool::cRectPlatformTool()
 	mShape->setFillColor(sf::Color::Blue);
 }
 
-cRectPlatformTool::~cRectPlatformTool()
-{
-
-}
-
 // Mouse Clicked Function
 void cRectPlatformTool::UseTool(sf::Vector2f& mousePos)
 {
@@ -42,7 +37,6 @@ void cRectPlatformTool::CompleteUseTool()
 	// Dynamic cast on update bad?
 	dynamic_cast<sf::RectangleShape*>(mShape)->setSize(mRectSize);
 }
-
 
 void cRectPlatformTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos)
 {
