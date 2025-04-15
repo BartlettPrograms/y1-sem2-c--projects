@@ -1,5 +1,4 @@
 #pragma once
-#include "cBoxCollider.h"
 #include "cPhysicsObject.h"
 #include "cAnimator.h"
 
@@ -27,12 +26,13 @@ public:
 	void DrawDebug(sf::RenderWindow& renderWindow);
 	bool IsGrounded() const { return m_bGrounded; }
 	void SetGrounded(bool isGrounded);
+
+	// Collision
+	cBoxCollider& GetCollider() { return mCollider; }
 protected:
 	eCharacterType mCharacterType;
 	// Character Animator
 	cAnimator mPlayerAnimator;
-	// Collision
-	sf::Vector2f mColliderOffset;
 	// Physics members
 	float mMoveInputMultGrounded = 0.8f;
 	float mMoveInputMultAirborne = 0.3f;

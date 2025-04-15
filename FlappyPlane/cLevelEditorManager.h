@@ -1,7 +1,6 @@
 #pragma once
 #include "cEditorDrawTool.h"
 #include "cEditorToolbarUI.h"
-#include "cLevelPlatformsList.h"
 #include "cPlayerInput.h"
 
 class cLevelEditorManager
@@ -16,7 +15,4 @@ private:
 	cEditorDrawTool mDrawTool;
 	cEditorToolbarUI mToolbar;
 	sf::RenderWindow& mMainWindow;
-
-	// Current Game Level data
-	cLevelPlatformsList& mPlatformsList; // Platforms
 };

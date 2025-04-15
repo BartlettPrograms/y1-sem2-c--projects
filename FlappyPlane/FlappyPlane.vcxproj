@@ -169,8 +169,6 @@
     <ClCompile Include="cPlayerInput.cpp" />
     <ClCompile Include="cRectPlatformTool.cpp" />
     <ClCompile Include="cRectPlatformToolButton.cpp" />
-    <ClCompile Include="cUpdateable.cpp" />
-    <ClCompile Include="cUpdateable.h" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

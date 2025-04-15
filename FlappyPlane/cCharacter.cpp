@@ -13,7 +13,7 @@ cCharacter::cCharacter(
 {
 	mDebugColliderShape.setOrigin(bounds.size / 2.0f);
 	mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
-	mColliderOffset = colliderOffset;
+	//mColliderOffset = colliderOffset;
 }
 
 cCharacter::~cCharacter()
@@ -26,27 +26,27 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (!m_bGrounded) {
 		mVelocity.y += mGravity * _DeltaSeconds; // gravity
 	}
-	mBounds.position += mVelocity * _DeltaSeconds; // movement
+	mCollider.mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
 	// Clamp position to not fall below ground && grounded reset
-	if (mBounds.position.y > 750)
+	if (mCollider.mBounds.position.y > 750)
 	{
 		mPlayerAnimator.EndFall();
-		mBounds.position.y = 750;
+		mCollider.mBounds.position.y = 750;
 		mVelocity.y = 0;
 		m_bGrounded = true;
 	}
 
 	// Clamp x position to keep player inside screen
-	if (mBounds.position.x < 64)
+	if (mCollider.mBounds.position.x < 64)
 	{
-		mBounds.position.x = 64;
+		mCollider.mBounds.position.x = 64;
 		mVelocity.x = 0;
 	}
-	else if (mBounds.position.x > 1302)
+	else if (mCollider.mBounds.position.x > 1302)
 	{
-		mBounds.position.x = 1302;
+		mCollider.mBounds.position.x = 1302;
 		mVelocity.x = 0;
 	}
 
@@ -56,13 +56,13 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 	if (mVelocity.y > mMaxVelocity.y) { mVelocity.y = mMaxVelocity.y; }
 	if (mVelocity.y < (-1 * mMaxVelocity.y)) { mVelocity.y = (-1 * mMaxVelocity.y); }
 
-	mPosition = mBounds.position - mColliderOffset;
+	mPosition = mCollider.mBounds.position - mColliderOffset;
 }
 
 
 void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 {
-	mDebugColliderShape.setPosition(mBounds.position);
+	mDebugColliderShape.setPosition(mCollider.mBounds.position);
 	mDebugPositionShape.setPosition(mPosition);
 	renderWindow.draw(mDebugColliderShape); // draw collider
 	renderWindow.draw(mDebugPositionShape); // draw player ground center

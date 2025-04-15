@@ -11,8 +11,7 @@ public:
 	void Draw(sf::RenderWindow& renderWindow) override;
 	void Jump();
 	void HandleInput();
-	// Collision
-	cBoxCollider& GetCollider() { return *this; }
+	
 
 	// Player Values
 	static const sf::Vector2f PLAYER_SIZE;

@@ -21,7 +21,7 @@ void cPlatformRect::Draw(sf::RenderWindow& window)
 
 void cPlatformRect::Update(cCharacter& character)
 {
-	if (CheckCollision(character, 1.0f))
+	if (CheckCollision(character.GetCollider(), 1.0f))
 	{
 		character.SetGrounded(true);
 	}

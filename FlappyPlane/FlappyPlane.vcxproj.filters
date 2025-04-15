@@ -107,16 +107,10 @@
     <ClCompile Include="cAnimationSliding.cpp">
       <Filter>Animator\Animations\Sliding</Filter>
     </ClCompile>
-    <ClCompile Include="cUpdateable.cpp">
-      <Filter>GameObjects\Components</Filter>
-    </ClCompile>
     <ClCompile Include="cPlayerInput.cpp">
       <Filter>GameObjects\Components</Filter>
     </ClCompile>
     <ClCompile Include="cDrawable.cpp">
-      <Filter>GameObjects\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="cUpdateable.h">
       <Filter>GameObjects\Components</Filter>
     </ClCompile>
     <ClCompile Include="cBoxCollider.cpp">

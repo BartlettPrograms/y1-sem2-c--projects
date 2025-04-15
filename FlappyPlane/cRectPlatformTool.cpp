@@ -8,6 +8,10 @@ cRectPlatformTool::cRectPlatformTool()
 	mShape->setFillColor(sf::Color::Blue);
 }
 
+cRectPlatformTool::~cRectPlatformTool()
+{
+}
+
 // Mouse Clicked Function
 void cRectPlatformTool::UseTool(sf::Vector2f& mousePos)
 {
@@ -21,9 +25,9 @@ void cRectPlatformTool::UseTool(sf::Vector2f& mousePos)
 }
 
 // Mouse released Function
-void cRectPlatformTool::CompleteUseTool()
+cPlatformRect* cRectPlatformTool::CompleteUseTool()
 {
-	// bound to pass in
+	// bounds to pass in
 	sf::FloatRect bounds;
 	bounds = sf::FloatRect(
 		mShape->getPosition(), 
@@ -31,11 +35,13 @@ void cRectPlatformTool::CompleteUseTool()
 	);
 
 	// Create platform
-	cPlatformRect newPlatform = cPlatformRect(bounds);
+	cPlatformRect* newPlatform = new cPlatformRect(bounds);
 
 	// reset size on complete
-	// Dynamic cast on update bad?
 	dynamic_cast<sf::RectangleShape*>(mShape)->setSize(mRectSize);
+
+	// return platform
+	return newPlatform;
 }
 
 void cRectPlatformTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos)

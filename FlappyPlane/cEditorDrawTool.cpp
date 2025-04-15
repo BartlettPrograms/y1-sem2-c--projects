@@ -1,9 +1,10 @@
 #include "cEditorDrawTool.h"
 
-cEditorDrawTool::cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& playerInput)
+cEditorDrawTool::cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& playerInput, cLevelPlatformsList& platformsList)
 	: mMainWindow(mainWindow)
 	, mActiveTool(nullptr)
 	, mPlayerInput(playerInput)
+	, mPlatformsList(platformsList)
 {
 	SetTool(cEditorDrawTool::ToolType::ToolMode_Rect);
 }

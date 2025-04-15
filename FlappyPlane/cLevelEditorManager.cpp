@@ -2,9 +2,8 @@
 
 cLevelEditorManager::cLevelEditorManager(sf::RenderWindow& mainWindow, cPlayerInput& playerInput, cLevelPlatformsList& mPlatformsList)
 	: mMainWindow(mainWindow)
-	, mDrawTool(mainWindow, playerInput)
+	, mDrawTool(mainWindow, playerInput, mPlatformsList)
 	, mToolbar(mainWindow, mDrawTool)
-	, mPlatformsList(mPlatformsList)
 {
 
 }

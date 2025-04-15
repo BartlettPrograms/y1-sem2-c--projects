@@ -1,10 +1,10 @@
+#pragma once
 #include "cGameObject.h"
-#include "cUpdateable.h"
 #include "cBoxCollider.h"
 
 class cUpdateable;
 
-class cPhysicsObject : public cGameObject, public cUpdateable, public cBoxCollider
+class cPhysicsObject : public cGameObject
 {
 public:
 	cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity);
@@ -14,4 +14,7 @@ protected:
 	sf::Vector2f mVelocity;
 	sf::Vector2f mMaxVelocity;
 	float mGravity = 400;
+	// Collision
+	cBoxCollider mCollider;
+	sf::Vector2f mColliderOffset;
 };

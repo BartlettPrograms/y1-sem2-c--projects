@@ -2,7 +2,7 @@
 
 
 cPhysicsObject::cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity)
-	: cBoxCollider(bounds)
+	: mCollider(bounds)
 	, mMaxVelocity(_maxVelocity)
 {
 

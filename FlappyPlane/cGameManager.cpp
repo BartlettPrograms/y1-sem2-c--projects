@@ -20,6 +20,7 @@ void cGameManager::GameTick()
     mPlayerCharacter.Update(mDeltaSeconds);
     mPlayerCharacter.Draw(mGameWindow);
 
+    mPlatformsList.DrawPlatforms(mGameWindow);
     //mPlatform1.Update(mPlayerCharacter);
     //mPlatform2.Update(mPlayerCharacter);
 

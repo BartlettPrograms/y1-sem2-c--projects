@@ -1,11 +1,12 @@
 #pragma once
 #include "cRectPlatformTool.h"
 #include <SFML/Graphics.hpp>
+#include "cLevelPlatformsList.h"
 #include "cPlayerInput.h"
 
 class cEditorDrawTool {
 public:
-    cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& playerInput);
+    cEditorDrawTool(sf::RenderWindow& mainWindow, cPlayerInput& playerInput, cLevelPlatformsList& platformsList);
     enum class ToolType {
         ToolMode_None,
         ToolMode_Rect,
@@ -24,4 +25,7 @@ private:
     sf::RenderWindow& mMainWindow;
     cBaseDrawTool* mActiveTool;
     cRectPlatformTool mRectangleTool;
+
+    // Current Game Level data
+    cLevelPlatformsList& mPlatformsList; // Platforms
 };
