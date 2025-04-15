@@ -8,7 +8,7 @@
 
 class cEditorDrawTool {
 public:
-    cEditorDrawTool();
+    cEditorDrawTool(sf::RenderWindow& mainWindow);
     enum class ToolType {
         ToolMode_None,
         ToolMode_Rect,
@@ -18,23 +18,12 @@ public:
         ToolMode_StampTool
     };
     void SetTool(ToolType type);
-    void SetColor(sf::Color color);
-    void UseTool(sf::RenderWindow& window, sf::Vector2f& mousePos);
-    void DrawToolToBoard(sf::RenderWindow& window);
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
-    void ChangeLineToolThickness(float changeValue);
-    float GetLineToolThickness();
-    void DrawCurrentToolToBoard(sf::RenderWindow& window);
-    void OnRightMouseClick();
-    //StampTool& GetStampTool();
+    void UseTool(sf::Vector2f& mousePos);
+    void DrawCursorToScreen(sf::RenderWindow& window);
+    void PlacePlatform();
 private:
-    ToolType m_ActiveTool = ToolType::ToolMode_Rect;
-    cRectPlatformTool m_RectangleTool;
-    //CircleTool m_CircleTool;
-    //LineTool m_LineTool;
-    //PolygonTool m_PolygonTool;
-    //StampTool m_StampTool;
-    bool m_IsDrawing = false;
-    sf::RectangleShape m_Rectangle;
-    sf::Vector2f m_NewShapeSize;
+    sf::RenderWindow& mMainWindow;
+    cBaseDrawTool* mActiveTool;
+    cRectPlatformTool mRectangleTool;
 };

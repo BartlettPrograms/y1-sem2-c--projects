@@ -5,8 +5,12 @@
 class cLevelEditorManager
 {
 public:
-	cLevelEditorManager();
+	cLevelEditorManager(sf::RenderWindow& mainWindow);
 	~cLevelEditorManager();
+	
+	void Update();
 private:
 	cEditorDrawTool mDrawTool;
+	cEditorToolbarUI mToolbar;
+	sf::RenderWindow& mMainWindow;
 };

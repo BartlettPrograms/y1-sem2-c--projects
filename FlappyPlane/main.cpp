@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "cGameManager.h"
 #include "cMainMenu.h"
+#include "cLevelEditorManager.h"
 
 int main()
 {
@@ -9,8 +10,9 @@ int main()
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
 
-    cMainMenu MainMenu(window);
     cGameManager GameManager(window);
+    cMainMenu MainMenu(window);
+    cLevelEditorManager LevelEditor(window);
 
     while (window.isOpen())
     {

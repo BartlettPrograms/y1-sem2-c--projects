@@ -34,7 +34,7 @@ void cRectPlatformTool::CompleteUseTool(sf::RenderTexture& CanvasTexture)
 	dynamic_cast<sf::RectangleShape*>(mShape)->setSize(mRectSize);
 }
 
-void cRectPlatformTool::UpdateShape(sf::Vector2f mousePos)
+void cRectPlatformTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f& mousePos)
 {
 	mShape->setPosition(mousePos);
 }

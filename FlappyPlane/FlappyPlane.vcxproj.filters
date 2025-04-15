@@ -72,6 +72,9 @@
     <Filter Include="LevelEditor\UI\Toolbar\ToolButtonRect">
       <UniqueIdentifier>{4ab4122d-d4b3-41c8-a70a-556ddc082d33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\Main Menu">
+      <UniqueIdentifier>{44e97c88-4628-4a0c-959b-ec42068b20f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -128,9 +131,6 @@
     <ClCompile Include="cPhysicsObject.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="cMainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cButtonUI.cpp">
       <Filter>UI\Buttons</Filter>
     </ClCompile>
@@ -157,6 +157,9 @@
     </ClCompile>
     <ClCompile Include="cLevelEditorManager.cpp">
       <Filter>LevelEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="cMainMenu.cpp">
+      <Filter>UI\Main Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -205,9 +208,6 @@
     <ClInclude Include="cCharacter.h">
       <Filter>GameObjects\Character</Filter>
     </ClInclude>
-    <ClInclude Include="cMainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cButtonUI.h">
       <Filter>UI\Buttons</Filter>
     </ClInclude>
@@ -234,6 +234,9 @@
     </ClInclude>
     <ClInclude Include="cLevelEditorManager.h">
       <Filter>LevelEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="cMainMenu.h">
+      <Filter>UI\Main Menu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

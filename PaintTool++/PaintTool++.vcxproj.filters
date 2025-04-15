@@ -112,7 +112,7 @@
     <ClCompile Include="cFileInterface.cpp">
       <Filter>Toolbar\FilesystemInterface</Filter>
     </ClCompile>
-    <ClCompile Include="cDrawTool.cpp">
+    <ClCompile Include="cEditorDrawTool.cpp">
       <Filter>Toolbar\DrawTool</Filter>
     </ClCompile>
     <ClCompile Include="cRectangleTool.cpp">
@@ -180,7 +180,7 @@
     <ClInclude Include="cFileInterface.h">
       <Filter>Toolbar\FilesystemInterface</Filter>
     </ClInclude>
-    <ClInclude Include="cDrawTool.h">
+    <ClInclude Include="cEditorDrawTool.h">
       <Filter>Toolbar\DrawTool</Filter>
     </ClInclude>
     <ClInclude Include="cRectangleTool.h">

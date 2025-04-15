@@ -147,7 +147,7 @@
     <ClCompile Include="cCircleTool.cpp" />
     <ClCompile Include="cCircleToolButton.cpp" />
     <ClCompile Include="cColorPicker.cpp" />
-    <ClCompile Include="cDrawTool.cpp" />
+    <ClCompile Include="cEditorDrawTool.cpp" />
     <ClCompile Include="cLineThicknessNegativeButton.cpp" />
     <ClCompile Include="cLineThicknessPositiveButton.cpp" />
     <ClCompile Include="cLineTool.cpp" />
@@ -172,7 +172,7 @@
     <ClInclude Include="cCircleTool.h" />
     <ClInclude Include="cCircleToolButton.h" />
     <ClInclude Include="cColorPicker.h" />
-    <ClInclude Include="cDrawTool.h" />
+    <ClInclude Include="cEditorDrawTool.h" />
     <ClInclude Include="cLineThicknessNegativeButton.h" />
     <ClInclude Include="cLineThicknessPositiveButton.h" />
     <ClInclude Include="cLineTool.h" />

@@ -11,7 +11,7 @@ public:
 	cMainMenu(sf::RenderWindow& renderWindow);
 	~cMainMenu();
 	void Update();
-	bool mIsActive = true;
+	bool mIsActive = false;
 private:
 	// Render Window
 	sf::RenderWindow& mRenderWindow;
