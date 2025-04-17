@@ -13,7 +13,7 @@ cCharacter::cCharacter(
 {
 	mDebugColliderShape.setOrigin(bounds.size / 2.0f);
 	mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
-	//mColliderOffset = colliderOffset;
+	mColliderOffset = colliderOffset;
 }
 
 cCharacter::~cCharacter()

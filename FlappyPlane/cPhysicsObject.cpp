@@ -1,5 +1,5 @@
+/*
 #include "cPhysicsObject.h"
-
 
 cPhysicsObject::cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity)
 	: mCollider(bounds)
@@ -7,7 +7,4 @@ cPhysicsObject::cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity)
 {
 
 }
-
-cPhysicsObject::~cPhysicsObject()
-{
-}
+*/

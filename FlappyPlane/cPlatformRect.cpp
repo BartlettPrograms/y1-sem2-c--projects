@@ -26,3 +26,11 @@ void cPlatformRect::Update(cCharacter& character)
 		character.SetGrounded(true);
 	}
 }
+
+void cPlatformRect::EditorInitPosition()
+{
+	float newPosX = mPosition.x + mBody.getLocalBounds().size.x / 2;
+	float newPosY = mPosition.y + mBody.getLocalBounds().size.y / 2;
+
+	mPosition = sf::Vector2f(newPosX, newPosY);
+}

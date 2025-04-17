@@ -24,10 +24,19 @@ void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mouseP
 	if (mPlayerInput.IsLeftClickPressed())
 	{
 		UseTool(mousePos);
+		mIsDrawing = true;
 	}
 	else
 	{
+		if (mIsDrawing)
+		{
+			CompleteUseTool();
+			mIsDrawing = false;
+		}
+		else
+		{
 		mActiveTool->UpdateCursor(window, mousePos);
+		}
 	}
 }
 
@@ -43,6 +52,7 @@ void cEditorDrawTool::DrawCursorToScreen(sf::RenderWindow& window)
 
 void cEditorDrawTool::CompleteUseTool()
 {
-	mActiveTool->CompleteUseTool();
+	cPlatformRect* platform = mActiveTool->CompleteUseTool();
+	mPlatformsList.AddPlatform(platform);
 }
 

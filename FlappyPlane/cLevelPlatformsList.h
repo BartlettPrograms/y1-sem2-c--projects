@@ -1,13 +1,17 @@
 #pragma once
 #include "cPlatformRect.h"
+#include "cPlayerCharacter.h"
 #include <vector>
 
 class cLevelPlatformsList
 {
 public:
 	cLevelPlatformsList();
-	void AddPlatform(cPlatformRect platform);
+	~cLevelPlatformsList();
+	void AddPlatform(cPlatformRect* platform);
 	void DrawPlatforms(sf::RenderWindow& window);
+	void CheckCollisions(cPlayerCharacter& playerCharacter);
 private:
-	std::vector<cPlatformRect> mPlatformList;
+	std::vector<cPlatformRect*> mPlatformList;
+	void ClearList();
 };

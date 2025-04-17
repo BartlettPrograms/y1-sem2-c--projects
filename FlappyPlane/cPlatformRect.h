@@ -12,6 +12,7 @@ public:
 	void Draw(sf::RenderWindow& window) override;
 	void Update(cCharacter& character);
 	cBoxCollider& GetCollider() { return *this; };
+	void EditorInitPosition();
 private:
 	sf::RectangleShape mBody;
 };

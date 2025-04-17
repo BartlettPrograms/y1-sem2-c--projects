@@ -16,5 +16,5 @@ public:
 	virtual void UseTool(sf::Vector2f& mousePos) = 0;
 	virtual cPlatformRect* CompleteUseTool() = 0;
 protected:
-	sf::Shape* mShape; // Create a base platform class
+	sf::Shape* mShape;
 };

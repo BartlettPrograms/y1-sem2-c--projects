@@ -85,7 +85,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
 
 void cPlayerCharacter::Draw(sf::RenderWindow& renderWindow) 
 {
-    DrawDebug(renderWindow);
+    //DrawDebug(renderWindow);
     mPlayerAnimator.Draw(renderWindow);
 }
 

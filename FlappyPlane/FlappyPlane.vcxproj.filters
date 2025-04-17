@@ -122,9 +122,6 @@
     <ClCompile Include="cCharacter.cpp">
       <Filter>GameObjects\Character</Filter>
     </ClCompile>
-    <ClCompile Include="cPhysicsObject.cpp">
-      <Filter>GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="cButtonUI.cpp">
       <Filter>UI\Buttons</Filter>
     </ClCompile>
@@ -156,6 +153,9 @@
       <Filter>UI\Main Menu</Filter>
     </ClCompile>
     <ClCompile Include="cLevelPlatformsList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cPhysicsObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

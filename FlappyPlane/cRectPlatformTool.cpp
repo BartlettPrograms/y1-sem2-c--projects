@@ -30,7 +30,7 @@ cPlatformRect* cRectPlatformTool::CompleteUseTool()
 	// bounds to pass in
 	sf::FloatRect bounds;
 	bounds = sf::FloatRect(
-		mShape->getPosition(), 
+		mShape->getPosition() + (mShape->getLocalBounds().size / 2.0f),
 		mShape->getLocalBounds().size
 	);
 

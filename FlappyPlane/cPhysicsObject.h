@@ -7,8 +7,11 @@ class cUpdateable;
 class cPhysicsObject : public cGameObject
 {
 public:
-	cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity);
-	~cPhysicsObject();
+	cPhysicsObject(sf::FloatRect& bounds, sf::Vector2f _maxVelocity)
+		: mCollider(bounds)
+		, mMaxVelocity(_maxVelocity)
+	{};
+	~cPhysicsObject() {};
 	void SetMaxVelocity(sf::Vector2f _maxVelocity) { mMaxVelocity = _maxVelocity; }
 protected:
 	sf::Vector2f mVelocity;

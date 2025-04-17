@@ -21,6 +21,7 @@ void cGameManager::GameTick()
     mPlayerCharacter.Draw(mGameWindow);
 
     mPlatformsList.DrawPlatforms(mGameWindow);
+    mPlatformsList.CheckCollisions(mPlayerCharacter);
     //mPlatform1.Update(mPlayerCharacter);
     //mPlatform2.Update(mPlayerCharacter);
 

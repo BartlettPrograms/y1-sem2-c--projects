@@ -28,4 +28,7 @@ private:
 
     // Current Game Level data
     cLevelPlatformsList& mPlatformsList; // Platforms
+
+    // Draw tool helpers
+    bool mIsDrawing = false;
 };
