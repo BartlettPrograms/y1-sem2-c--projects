@@ -11,6 +11,7 @@ cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerI
     , m_vPlayerInputNormalized(sf::Vector2f(0, 0))
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
+    mMaxVelocity = sf::Vector2f(300, 600);
     mDebugColliderShape.setPosition(mPosition);
     mDebugColliderShape.setOutlineColor(sf::Color::Red);
     mDebugColliderShape.setOutlineThickness(2);
@@ -19,7 +20,6 @@ cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerI
 
 cPlayerCharacter::~cPlayerCharacter()
 {
-    delete mSprite;
 }
 
 void cPlayerCharacter::Update(float DeltaSeconds)
@@ -93,6 +93,7 @@ void cPlayerCharacter::Jump()
 {
     m_bGrounded = false;
     mVelocity.y -= m_fJumpImpulse;
+    //mVelocity.y -= -sqrtf(2.0f * 981.96 * m_fJumpImpulse);
 }
 
 void cPlayerCharacter::HandleInput()

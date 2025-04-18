@@ -3,16 +3,17 @@
 #include "cBoxCollider.h"
 #include "cCharacter.h"
 
-class cPlatformRect : public cGameObject, cBoxCollider
+class cPlatformRect : public cGameObject
 {
+private:
+	sf::RectangleShape mBody;
+	cBoxCollider mBoxCollider;
 public:
 	cPlatformRect(sf::FloatRect bounds);
 	~cPlatformRect();
 
 	void Draw(sf::RenderWindow& window) override;
-	void Update(cCharacter& character);
-	cBoxCollider& GetCollider() { return *this; };
+	void Update(cCharacter& character, sf::Vector2f& collisionDirection);
+	cBoxCollider& GetCollider() { return mBoxCollider; };
 	void EditorInitPosition();
-private:
-	sf::RectangleShape mBody;
 };

@@ -8,7 +8,7 @@ public:
 	cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerInput);
 	~cPlayerCharacter();
 	void Update(float DeltaSeconds);
-	void Draw(sf::RenderWindow& renderWindow) override;
+	void Draw(sf::RenderWindow& renderWindow);
 	void Jump();
 	void HandleInput();
 	

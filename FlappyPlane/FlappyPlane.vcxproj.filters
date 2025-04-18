@@ -83,9 +83,6 @@
     <ClCompile Include="cGameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cPhysicsObject.h">
-      <Filter>GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="cPlayerCharacter.cpp">
       <Filter>GameObjects\Character\PlayerCharacter</Filter>
     </ClCompile>

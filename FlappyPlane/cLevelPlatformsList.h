@@ -13,5 +13,6 @@ public:
 	void CheckCollisions(cPlayerCharacter& playerCharacter);
 private:
 	std::vector<cPlatformRect*> mPlatformList;
+	sf::Vector2f mCollisionDirection;
 	void ClearList();
 };

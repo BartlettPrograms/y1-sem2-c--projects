@@ -5,11 +5,11 @@ cCharacter::cCharacter(
 	sf::Vector2f position, 
 	sf::FloatRect bounds,
 	sf::Vector2f colliderOffset, 
-	sf::Vector2f _maxVelocity)
-	: cPhysicsObject(bounds, _maxVelocity)
-	, mDebugColliderShape(bounds.size)
+	sf::Vector2f _maxVelocity
+)	: mDebugColliderShape(bounds.size)
 	, mDebugPositionShape(4)
 	, mCharacterType(type)
+	, mCollider(bounds)
 {
 	mDebugColliderShape.setOrigin(bounds.size / 2.0f);
 	mDebugPositionShape.setOrigin(sf::Vector2f(2, 2));
@@ -23,13 +23,14 @@ cCharacter::~cCharacter()
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
 	// Physics update
-	if (!m_bGrounded) {
+	//if (!m_bGrounded) {
 		mVelocity.y += mGravity * _DeltaSeconds; // gravity
-	}
+	//}
 	mCollider.mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
 	// Clamp position to not fall below ground && grounded reset
+	// Deleteable - just stops player fall thru ground
 	if (mCollider.mBounds.position.y > 750)
 	{
 		mPlayerAnimator.EndFall();
@@ -68,9 +69,27 @@ void cCharacter::DrawDebug(sf::RenderWindow& renderWindow)
 	renderWindow.draw(mDebugPositionShape); // draw player ground center
 }
 
-void cCharacter::SetGrounded(bool isGrounded)
+void cCharacter::OnCollision(sf::Vector2f direction)
 {
-	mPlayerAnimator.EndFall();
-	mVelocity.y = 0;
-	m_bGrounded = true;
+	if (direction.x < 0.0f)
+	{
+		// Collision on the left
+		mVelocity.x = 0.0f;
+	}
+	else if (direction.x > 0.0f)
+	{
+		// Collision on the right
+		mVelocity.x = 0.0f;
+	}
+	if (direction.y < 0.0f)
+	{
+		// Collision on the bottom
+		mVelocity.y = 0.0f;
+		m_bGrounded = true;
+	}
+	if (direction.y > 0.0f)
+	{
+		// Collision on the top
+		mVelocity.y = 0.0f;
+	}
 }

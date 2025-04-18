@@ -1,7 +1,7 @@
 #include "cPlatformRect.h"
 
 cPlatformRect::cPlatformRect(sf::FloatRect bounds)
-	: cBoxCollider(bounds)
+	: mBoxCollider(bounds)
 {
 	mBody.setPosition(bounds.position);
 	mBody.setSize(bounds.size);
@@ -19,12 +19,10 @@ void cPlatformRect::Draw(sf::RenderWindow& window)
 	window.draw(mBody);
 }
 
-void cPlatformRect::Update(cCharacter& character)
+void cPlatformRect::Update(cCharacter& character, sf::Vector2f& collisionDirection)
 {
-	if (CheckCollision(character.GetCollider(), 1.0f))
-	{
-		character.SetGrounded(true);
-	}
+	if(mBoxCollider.CheckCollision(character.GetCollider(), collisionDirection, 1.0f))
+		character.OnCollision(collisionDirection);
 }
 
 void cPlatformRect::EditorInitPosition()

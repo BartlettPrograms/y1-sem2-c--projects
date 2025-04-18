@@ -22,11 +22,6 @@ void cGameManager::GameTick()
 
     mPlatformsList.DrawPlatforms(mGameWindow);
     mPlatformsList.CheckCollisions(mPlayerCharacter);
-    //mPlatform1.Update(mPlayerCharacter);
-    //mPlatform2.Update(mPlayerCharacter);
-
-    //mPlatform1.Draw(mGameWindow);
-    //mPlatform2.Draw(mGameWindow);
 }
 
 void cGameManager::RefreshDeltaTime()

@@ -163,7 +163,6 @@
     <ClCompile Include="cPlatformRect.cpp" />
     <ClCompile Include="cGameManager.cpp" />
     <ClCompile Include="cAnimationIdle.cpp" />
-    <ClCompile Include="cPhysicsObject.h" />
     <ClCompile Include="cPlayButtonUI.cpp" />
     <ClCompile Include="cPlayerCharacter.cpp" />
     <ClCompile Include="cPlayerInput.cpp" />
