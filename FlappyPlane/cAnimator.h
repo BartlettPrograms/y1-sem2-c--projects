@@ -4,6 +4,7 @@
 #include "cAnimationJumping.h"
 #include "cAnimationIdle.h"
 #include "cAnimationSliding.h"
+#include "cAnimationWallslide.h"
 
 class cAnimator : cDrawable
 {
@@ -20,6 +21,7 @@ public:
 	void EndFall();
 	void SetRunning(bool isRunning);
 	void SetSliding(bool isSliding);
+	void SetWallsliding(bool isWallsliding);
 private:
 	// Face left or right
 	const sf::Vector2f mFaceLeftScale;
@@ -33,4 +35,5 @@ private:
 	cAnimationJumping mJumpingAnimation;
 	cAnimationIdle mIdleAnimation;
 	cAnimationSliding mSlidingAnimation;
+	cAnimationWallslide mWallslideAnimation;
 };

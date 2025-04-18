@@ -71,3 +71,8 @@ void cAnimator::SetSliding(bool isSliding)
 {
     mIsSliding = isSliding;
 }
+
+void cAnimator::SetWallsliding(bool isWallsliding)
+{
+    mCurrentAnimation = &mWallslideAnimation;
+}

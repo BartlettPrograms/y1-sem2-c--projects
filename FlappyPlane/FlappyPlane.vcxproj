@@ -147,6 +147,7 @@
     <ClCompile Include="cAnimationJumping.cpp" />
     <ClCompile Include="cAnimationRunning.cpp" />
     <ClCompile Include="cAnimationSliding.cpp" />
+    <ClCompile Include="cAnimationWallslide.cpp" />
     <ClCompile Include="cAnimator.cpp" />
     <ClCompile Include="cBoxCollider.cpp" />
     <ClCompile Include="cButtonUI.cpp" />
@@ -159,7 +160,6 @@
     <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cLevelPlatformsList.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
-    <ClCompile Include="cPhysicsObject.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
     <ClCompile Include="cGameManager.cpp" />
     <ClCompile Include="cAnimationIdle.cpp" />
@@ -176,6 +176,7 @@
     <ClInclude Include="cAnimationJumping.h" />
     <ClInclude Include="cAnimationRunning.h" />
     <ClInclude Include="cAnimationSliding.h" />
+    <ClInclude Include="cAnimationWallslide.h" />
     <ClInclude Include="cAnimator.h" />
     <ClInclude Include="cBoxCollider.h" />
     <ClInclude Include="cButtonUI.h" />

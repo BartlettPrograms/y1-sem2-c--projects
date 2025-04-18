@@ -23,9 +23,7 @@ cCharacter::~cCharacter()
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
 	// Physics update
-	//if (!m_bGrounded) {
-		mVelocity.y += mGravity * _DeltaSeconds; // gravity
-	//}
+	mVelocity.y += mGravityCurrent * _DeltaSeconds; // gravity
 	mCollider.mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 
@@ -75,21 +73,34 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	{
 		// Collision on the left
 		mVelocity.x = 0.0f;
+		SetWallsliding();
+		
 	}
 	else if (direction.x > 0.0f)
 	{
 		// Collision on the right
 		mVelocity.x = 0.0f;
+		SetWallsliding();
 	}
 	if (direction.y < 0.0f)
 	{
 		// Collision on the bottom
 		mVelocity.y = 0.0f;
 		m_bGrounded = true;
+		mPlayerAnimator.EndFall();
 	}
 	if (direction.y > 0.0f)
 	{
 		// Collision on the top
 		mVelocity.y = 0.0f;
+	}
+}
+
+void cCharacter::SetWallsliding()
+{
+	if (!m_bGrounded)
+	{
+		mPlayerAnimator.SetWallsliding(true);
+		mGravityCurrent = mGravityWallHang;
 	}
 }

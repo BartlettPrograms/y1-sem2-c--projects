@@ -75,6 +75,9 @@
     <Filter Include="UI\Main Menu">
       <UniqueIdentifier>{44e97c88-4628-4a0c-959b-ec42068b20f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Animator\Animations\Wallslide">
+      <UniqueIdentifier>{ddcc32b3-4513-4cb8-873f-3eb86a8bc816}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -152,8 +155,8 @@
     <ClCompile Include="cLevelPlatformsList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cPhysicsObject.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="cAnimationWallslide.cpp">
+      <Filter>Animator\Animations\Wallslide</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +237,9 @@
     </ClInclude>
     <ClInclude Include="cLevelPlatformsList.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cAnimationWallslide.h">
+      <Filter>Animator\Animations\Wallslide</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
