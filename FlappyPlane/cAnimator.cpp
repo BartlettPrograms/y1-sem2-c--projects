@@ -25,12 +25,14 @@ void cAnimator::FaceLeft()
 {
     mCurrentAnimation->SetScale(mFaceLeftScale);
     mIdleAnimation.SetScale(mFaceLeftScale);
+    mWallslideAnimation.SetScale(mFaceLeftScale);
 }
 
 void cAnimator::FaceRight()
 {
     mCurrentAnimation->SetScale(mFaceRightScale);
     mIdleAnimation.SetScale(mFaceRightScale);
+    mWallslideAnimation.SetScale(mFaceRightScale);
 }
 
 void cAnimator::BeginJump()

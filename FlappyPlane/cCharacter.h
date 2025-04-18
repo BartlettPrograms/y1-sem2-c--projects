@@ -21,9 +21,10 @@ protected:
 	sf::Vector2f mPosition;
 	sf::Vector2f mVelocity;
 	sf::Vector2f mMaxVelocity;
-	const float mGravityFreefall = 300;
-	const float mGravityWallHang = 100;
-	float mGravityCurrent = mGravityFreefall;
+	float mMaxWallslideFallVelocity = 40;
+	float mGravity = 300;
+	// Character members
+	bool mIsFacingRight = true;
 	// Dampen Movment
 	float mMoveInputMultGrounded = 0.8f;
 	float mMoveInputMultAirborne = 0.3f;
@@ -34,11 +35,16 @@ protected:
 	cBoxCollider mCollider;
 	sf::Vector2f mColliderOffset;
 	// Character Jumping
-	bool m_bGrounded = false;
-	float m_fJumpImpulse = 275;
+	bool mIsGrounded = false;
+	bool mIsTouchingWall = false;
+	bool mIsWallsliding = false;
+	float mJumpImpulse = 100;
+	sf::Vector2f mWallslideJumpImpulse;
 	// Debug
 	sf::RectangleShape mDebugColliderShape;
 	sf::CircleShape mDebugPositionShape;
+
+	void SetWallsliding();
 public:
 	cCharacter(
 		eCharacterType type, 
@@ -51,9 +57,9 @@ public:
 
 	void CharacterPhysicsUpdate(float _DeltaSeconds);
 	void DrawDebug(sf::RenderWindow& renderWindow);
-	bool IsGrounded() const { return m_bGrounded; }
+	bool IsGrounded() const { return mIsGrounded; }
 	void OnCollision(sf::Vector2f direction);
-	void SetWallsliding();
+	
 
 	// Collision
 	cBoxCollider& GetCollider() { return mCollider; }

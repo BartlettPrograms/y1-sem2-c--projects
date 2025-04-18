@@ -20,4 +20,5 @@ void cEditorToolbarUI::Update()
 void cEditorToolbarUI::Draw() {
 	mToolbarWindow.draw(*m_UIBackground);
 	ButtonRectangleTool.Draw(mToolbarWindow);
+	mToolbarWindow.display();
 }

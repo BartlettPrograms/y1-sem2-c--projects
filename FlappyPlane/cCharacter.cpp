@@ -22,10 +22,11 @@ cCharacter::~cCharacter()
 
 void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 {
-	// Physics update
-	mVelocity.y += mGravityCurrent * _DeltaSeconds; // gravity
-	mCollider.mBounds.position += mVelocity * _DeltaSeconds; // movement
 
+	// Add Gravity to Velocity
+	mVelocity.y += mGravity * _DeltaSeconds;
+	// Add velocity to collider position
+	mCollider.mBounds.position += mVelocity * _DeltaSeconds; // movement
 
 	// Clamp position to not fall below ground && grounded reset
 	// Deleteable - just stops player fall thru ground
@@ -34,7 +35,7 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 		mPlayerAnimator.EndFall();
 		mCollider.mBounds.position.y = 750;
 		mVelocity.y = 0;
-		m_bGrounded = true;
+		mIsGrounded = true;
 	}
 
 	// Clamp x position to keep player inside screen
@@ -49,11 +50,18 @@ void cCharacter::CharacterPhysicsUpdate(float _DeltaSeconds)
 		mVelocity.x = 0;
 	}
 
-	// Clamp velocity to max velocity
+	// Clamp velocity to max velocities
 	if (mVelocity.x > mMaxVelocity.x) { mVelocity.x = mMaxVelocity.x; }
 	if (mVelocity.x < (-1 * mMaxVelocity.x)) { mVelocity.x = (-1 * mMaxVelocity.x); }
-	if (mVelocity.y > mMaxVelocity.y) { mVelocity.y = mMaxVelocity.y; }
 	if (mVelocity.y < (-1 * mMaxVelocity.y)) { mVelocity.y = (-1 * mMaxVelocity.y); }
+	if (mIsWallsliding) // Wallslide falling
+	{
+		if (mVelocity.y > mMaxWallslideFallVelocity) { mVelocity.y = mMaxWallslideFallVelocity; }
+	}
+	else if (mVelocity.y > mMaxVelocity.y) // Falling
+	{
+		mVelocity.y = mMaxVelocity.y; 
+	}
 
 	mPosition = mCollider.mBounds.position - mColliderOffset;
 }
@@ -86,7 +94,7 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 	{
 		// Collision on the bottom
 		mVelocity.y = 0.0f;
-		m_bGrounded = true;
+		mIsGrounded = true;
 		mPlayerAnimator.EndFall();
 	}
 	if (direction.y > 0.0f)
@@ -98,9 +106,14 @@ void cCharacter::OnCollision(sf::Vector2f direction)
 
 void cCharacter::SetWallsliding()
 {
-	if (!m_bGrounded)
+	if (!mIsGrounded)
 	{
-		mPlayerAnimator.SetWallsliding(true);
-		mGravityCurrent = mGravityWallHang;
+		mIsTouchingWall = true;
+		if (mVelocity.y > 0)
+		{
+			// Wallsliding - Downward momentum
+			mPlayerAnimator.SetWallsliding(true);
+			mIsWallsliding = true;
+		}
 	}
 }

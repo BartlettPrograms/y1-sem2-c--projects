@@ -10,6 +10,7 @@ public:
 	void Update(float DeltaSeconds);
 	void Draw(sf::RenderWindow& renderWindow);
 	void Jump();
+	void JumpWallsliding();
 	void HandleInput();
 	
 

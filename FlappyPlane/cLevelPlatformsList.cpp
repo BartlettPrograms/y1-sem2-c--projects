@@ -26,7 +26,7 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window)
 void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 {
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
-		mPlatformList[i]->Update(playerCharacter, mCollisionDirection);
+		mPlatformList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection);
 	}
 }
 

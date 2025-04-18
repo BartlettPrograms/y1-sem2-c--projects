@@ -12,6 +12,7 @@ cPlayerCharacter::cPlayerCharacter(sf::Vector2f _position, cPlayerInput& playerI
 {
     mVelocity = sf::Vector2f(0.0f, 0.0f);
     mMaxVelocity = sf::Vector2f(300, 600);
+    mWallslideJumpImpulse = sf::Vector2f(150, 60);
     mDebugColliderShape.setPosition(mPosition);
     mDebugColliderShape.setOutlineColor(sf::Color::Red);
     mDebugColliderShape.setOutlineThickness(2);
@@ -27,7 +28,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     HandleInput();
 
     // No Input
-    if (m_vPlayerInputNormalized.x == 0) {   
+    if (mIsGrounded && m_vPlayerInputNormalized.x == 0) {   
         mPlayerAnimator.SetSliding(true);
         // Velocity deadzone
         if (std::abs(mVelocity.x) < mVelocityDeadzone) {
@@ -38,7 +39,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
         }
         else {
             // slow player horizontal speed
-            if (m_bGrounded)
+            if (mIsGrounded)
             {
                 mVelocity.x *= 1 - mVelocityDampGrounded * DeltaSeconds;
                 
@@ -52,7 +53,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     else
     {   // Input detected, add horizontal speed to player
         mPlayerAnimator.SetSliding(false);
-        if (m_bGrounded)
+        if (mIsGrounded)
         {
             mVelocity += mMoveInputMultGrounded * m_vPlayerInputNormalized;
             mPlayerAnimator.SetRunning(true);
@@ -66,7 +67,7 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     CharacterPhysicsUpdate(DeltaSeconds);
 
     // Tell animator jump peak has been reached
-    if (m_bGrounded == false && mVelocity.y < -1 && mVelocity.y > -20)
+    if (mIsGrounded == false && mVelocity.y < -1 && mVelocity.y > -20)
     {
         mPlayerAnimator.JumpPeak();
     }
@@ -74,9 +75,11 @@ void cPlayerCharacter::Update(float DeltaSeconds)
     // Face Left/Right
     if (mVelocity.x > 1) {
         mPlayerAnimator.FaceRight();
+        mIsFacingRight = true;
     }
     else if (mVelocity.x < -1) {
         mPlayerAnimator.FaceLeft();
+        mIsFacingRight = false;
     }
 
     // Update Animation
@@ -91,28 +94,46 @@ void cPlayerCharacter::Draw(sf::RenderWindow& renderWindow)
 
 void cPlayerCharacter::Jump()
 {
-    m_bGrounded = false;
-    mVelocity.y -= m_fJumpImpulse;
-    //mVelocity.y -= -sqrtf(2.0f * 981.96 * m_fJumpImpulse);
+    mIsGrounded = false;
+    //mVelocity.y -= mJumpImpulse;
+    mVelocity.y -= sqrtf(2.0f * mGravity * mJumpImpulse); // someone said this was good?
+}
+
+void cPlayerCharacter::JumpWallsliding()
+{
+    mIsTouchingWall = false;
+    mIsWallsliding = false;
+    mVelocity.y = -sqrtf(2.0f * mGravity * mWallslideJumpImpulse.y);
+    if (mIsFacingRight) {
+        mVelocity.x = -mWallslideJumpImpulse.x;
+    }
+    else {
+        mVelocity.x = mWallslideJumpImpulse.x;
+    }
 }
 
 void cPlayerCharacter::HandleInput()
 {
     // Arrow Keys
-    if (mPlayerInput.IsRightArrowPressed()) {
+    if (mPlayerInput.IsMoveRightInputPressed()) {
         m_vPlayerInputNormalized.x = 1;
     }
-    else if (mPlayerInput.IsLeftArrowPressed()) {
+    else if (mPlayerInput.IsMoveLeftInputPressed()) {
         m_vPlayerInputNormalized.x = -1;
     }
     else {
         m_vPlayerInputNormalized.x = 0;
     }
     // Space
-    if (mPlayerInput.IsSpacePressed() && m_bGrounded)
+    if (mPlayerInput.IsJumpInputPressed() && mIsGrounded)
     {
         mPlayerAnimator.BeginJump();
         Jump();
+    }
+    else if (mPlayerInput.IsJumpInputPressed() && mIsTouchingWall)
+    {
+        mPlayerAnimator.BeginJump();
+        JumpWallsliding();
     }
 }
 

@@ -38,19 +38,19 @@ void cPlayerInput::UpdateInput(const sf::Event* event)
 }
 */
 
-bool cPlayerInput::IsSpacePressed() const
+bool cPlayerInput::IsJumpInputPressed() const
 {
     return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
 }
 
-bool cPlayerInput::IsLeftArrowPressed() const
+bool cPlayerInput::IsMoveLeftInputPressed() const
 {
-    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left);
+    return (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A));
 }
 
-bool cPlayerInput::IsRightArrowPressed() const
+bool cPlayerInput::IsMoveRightInputPressed() const
 {
-    return sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right);
+    return (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D));
 }
 
 bool cPlayerInput::IsLeftClickPressed() const
