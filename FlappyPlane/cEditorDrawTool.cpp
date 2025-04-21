@@ -19,11 +19,11 @@ void cEditorDrawTool::SetTool(ToolType type)
 	}
 }
 
-void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos)
+void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPosition)
 {
 	if (mPlayerInput.IsLeftClickPressed())
 	{
-		UseTool(mousePos);
+		UseTool(toolPosition);
 		mIsDrawing = true;
 	}
 	else
@@ -35,14 +35,16 @@ void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f mouseP
 		}
 		else
 		{
-		mActiveTool->UpdateCursor(window, mousePos);
+		mActiveTool->UpdateCursor(window, toolPosition);
 		}
 	}
 }
 
-void cEditorDrawTool::UseTool(sf::Vector2f& mousePos)
+void cEditorDrawTool::UseTool(sf::Vector2f& toolPosition)
 {
-	mActiveTool->UseTool(mousePos);
+	toolPosition.x += mGridSize;
+	toolPosition.y += mGridSize;
+	mActiveTool->UseTool(toolPosition);
 }
 
 void cEditorDrawTool::DrawCursorToScreen(sf::RenderWindow& window)

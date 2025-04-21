@@ -14,5 +14,5 @@ public:
 	cPlatformRect* CompleteUseTool() override;
 	void UseTool(sf::Vector2f& mousePos) override;
 private:
-	sf::Vector2f mRectSize = sf::Vector2f(20, 20);
+	sf::Vector2f mRectSize = sf::Vector2f(24, 24);
 };

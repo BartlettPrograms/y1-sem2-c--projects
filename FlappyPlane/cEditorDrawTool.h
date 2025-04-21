@@ -25,6 +25,9 @@ private:
     sf::RenderWindow& mMainWindow;
     cBaseDrawTool* mActiveTool;
     cRectPlatformTool mRectangleTool;
+    
+    // DrawGrid
+    float mGridSize = 24;
 
     // Current Game Level data
     cLevelPlatformsList& mPlatformsList; // Platforms

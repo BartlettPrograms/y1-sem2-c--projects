@@ -15,4 +15,7 @@ private:
 	cEditorDrawTool mDrawTool;
 	cEditorToolbarUI mToolbar;
 	sf::RenderWindow& mMainWindow;
+
+	// DrawGrid
+	float mGridSize = 24;
 };

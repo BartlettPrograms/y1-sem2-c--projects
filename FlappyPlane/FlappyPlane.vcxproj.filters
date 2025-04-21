@@ -78,6 +78,15 @@
     <Filter Include="Animator\Animations\Wallslide">
       <UniqueIdentifier>{ddcc32b3-4513-4cb8-873f-3eb86a8bc816}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\LevelBlocks\RectPlatform">
+      <UniqueIdentifier>{8c986891-b835-4d19-9df5-f096dfe10295}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\LevelBlocks\SlopePlatform">
+      <UniqueIdentifier>{00af949d-a27c-45a0-92fa-aaa7a178089c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\EditorDrawTool\Tools\Slope">
+      <UniqueIdentifier>{7cfd7e18-9376-447f-bee9-9e0569e32469}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -115,9 +124,6 @@
     </ClCompile>
     <ClCompile Include="cBoxCollider.cpp">
       <Filter>GameObjects\Components</Filter>
-    </ClCompile>
-    <ClCompile Include="cPlatformRect.cpp">
-      <Filter>GameObjects\LevelBlocks</Filter>
     </ClCompile>
     <ClCompile Include="cCharacter.cpp">
       <Filter>GameObjects\Character</Filter>
@@ -157,6 +163,18 @@
     </ClCompile>
     <ClCompile Include="cAnimationWallslide.cpp">
       <Filter>Animator\Animations\Wallslide</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlatform.cpp">
+      <Filter>GameObjects\LevelBlocks</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlatformRect.cpp">
+      <Filter>GameObjects\LevelBlocks\RectPlatform</Filter>
+    </ClCompile>
+    <ClCompile Include="cPlatformSlope.cpp">
+      <Filter>GameObjects\LevelBlocks\SlopePlatform</Filter>
+    </ClCompile>
+    <ClCompile Include="cSlopePlatformTool.cpp">
+      <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +217,6 @@
     <ClInclude Include="cBoxCollider.h">
       <Filter>GameObjects\Components</Filter>
     </ClInclude>
-    <ClInclude Include="cPlatformRect.h">
-      <Filter>GameObjects\LevelBlocks</Filter>
-    </ClInclude>
     <ClInclude Include="cCharacter.h">
       <Filter>GameObjects\Character</Filter>
     </ClInclude>
@@ -240,6 +255,18 @@
     </ClInclude>
     <ClInclude Include="cAnimationWallslide.h">
       <Filter>Animator\Animations\Wallslide</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlatformRect.h">
+      <Filter>GameObjects\LevelBlocks\RectPlatform</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlatformSlope.h">
+      <Filter>GameObjects\LevelBlocks\SlopePlatform</Filter>
+    </ClInclude>
+    <ClInclude Include="cPlatform.h">
+      <Filter>GameObjects\LevelBlocks</Filter>
+    </ClInclude>
+    <ClInclude Include="cSlopePlatformTool.h">
+      <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
