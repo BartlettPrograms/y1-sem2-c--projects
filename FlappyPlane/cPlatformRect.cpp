@@ -19,12 +19,16 @@ void cPlatformRect::Draw(sf::RenderWindow& window)
 	window.draw(mBody);
 }
 
-void cPlatformRect::CheckCollideWithPlayer(cCharacter& character, sf::Vector2f& collisionDirection)
+bool cPlatformRect::CheckCollideWithPlayer(cCharacter& character, sf::Vector2f& collisionDirection)
 {
+	// Check platform collision with player
 	if (mBoxCollider.CheckCollision(character.GetCollider(), collisionDirection, 1.0f))
 	{
+		// If collision, tell player object:
 		character.OnCollision(collisionDirection);
+		return true;
 	}
+	return false;
 }
 
 void cPlatformRect::EditorInitPosition()

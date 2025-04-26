@@ -127,14 +127,28 @@ void cPlayerCharacter::HandleInput()
     // Space
     if (mPlayerInput.IsJumpInputPressed() && mIsGrounded)
     {
+        mJumpKeyHeld = true;
         mPlayerAnimator.BeginJump();
         Jump();
     }
-    else if (mPlayerInput.IsJumpInputPressed() && mIsTouchingWall)
+    else if (mPlayerInput.IsJumpInputPressed() && mIsTouchingWall && !mJumpKeyHeld)
     {
+        mJumpKeyHeld = true;
         mPlayerAnimator.BeginJump();
         JumpWallsliding();
     }
+    else if (!mPlayerInput.IsJumpInputPressed() && mJumpKeyHeld && mVelocity.y < 0)
+    {
+        mVelocity.y = mVelocity.y * .7f;
+        mJumpKeyHeld = false;
+    }
+}
+
+void cPlayerCharacter::SetUngrounded()
+{
+    mIsGrounded = false;
+    mIsTouchingWall = false;
+    mIsWallsliding = false;
 }
 
 

@@ -21,7 +21,7 @@ void cEditorDrawTool::SetTool(ToolType type)
 
 void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPosition)
 {
-	if (mPlayerInput.IsLeftClickPressed())
+	if (mPlayerInput.IsLeftClickPressed() && window.hasFocus())
 	{
 		UseTool(toolPosition);
 		mIsDrawing = true;
@@ -35,7 +35,7 @@ void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPo
 		}
 		else
 		{
-		mActiveTool->UpdateCursor(window, toolPosition);
+			mActiveTool->UpdateCursor(window, toolPosition);
 		}
 	}
 }

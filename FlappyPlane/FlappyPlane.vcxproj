@@ -159,6 +159,7 @@
     <ClCompile Include="cFileInterface.cpp" />
     <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cLevelPlatformsList.cpp" />
+    <ClCompile Include="cLoadButton.cpp" />
     <ClCompile Include="cMainMenu.cpp" />
     <ClCompile Include="cPlatform.cpp" />
     <ClCompile Include="cPlatformRect.cpp" />
@@ -169,6 +170,7 @@
     <ClCompile Include="cPlayerInput.cpp" />
     <ClCompile Include="cRectPlatformTool.cpp" />
     <ClCompile Include="cRectPlatformToolButton.cpp" />
+    <ClCompile Include="cSaveButton.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="cPlatformSlope.cpp" />
     <ClCompile Include="cSlopePlatformTool.cpp" />
@@ -191,6 +193,7 @@
     <ClInclude Include="cFileInterface.h" />
     <ClInclude Include="cLevelEditorManager.h" />
     <ClInclude Include="cLevelPlatformsList.h" />
+    <ClInclude Include="cLoadButton.h" />
     <ClInclude Include="cMainMenu.h" />
     <ClInclude Include="cPlatform.h" />
     <ClInclude Include="cPlatformRect.h" />
@@ -203,6 +206,7 @@
     <ClInclude Include="cAnimationIdle.h" />
     <ClInclude Include="cRectPlatformTool.h" />
     <ClInclude Include="cRectPlatformToolButton.h" />
+    <ClInclude Include="cSaveButton.h" />
     <ClInclude Include="cSlopePlatformTool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -87,6 +87,12 @@
     <Filter Include="LevelEditor\EditorDrawTool\Tools\Slope">
       <UniqueIdentifier>{7cfd7e18-9376-447f-bee9-9e0569e32469}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LevelEditor\UI\Toolbar\SaveButton">
+      <UniqueIdentifier>{320010e4-c3be-46c2-9651-ef87540841b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LevelEditor\UI\Toolbar\LoadButton">
+      <UniqueIdentifier>{3ea2502a-0284-4903-9072-62effc71300d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -175,6 +181,12 @@
     </ClCompile>
     <ClCompile Include="cSlopePlatformTool.cpp">
       <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
+    </ClCompile>
+    <ClCompile Include="cSaveButton.cpp">
+      <Filter>LevelEditor\UI\Toolbar\SaveButton</Filter>
+    </ClCompile>
+    <ClCompile Include="cLoadButton.cpp">
+      <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -267,6 +279,12 @@
     </ClInclude>
     <ClInclude Include="cSlopePlatformTool.h">
       <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
+    </ClInclude>
+    <ClInclude Include="cSaveButton.h">
+      <Filter>LevelEditor\UI\Toolbar\SaveButton</Filter>
+    </ClInclude>
+    <ClInclude Include="cLoadButton.h">
+      <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
 #include "cLevelPlatformsList.h"
 #include "cLevelEditorManager.h"
 #include "cPlayerInput.h"
+#include "cFileInterface.h"
 
 int main()
 {
@@ -11,14 +12,15 @@ int main()
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
 
+    // Create File Interface
+    cFileInterface FileInterface;
     // Shared Level list
     cLevelPlatformsList LevelPlatformsList;
-
     // Create Game managers
     cPlayerInput PlayerInput;
     cGameManager GameManager(window, PlayerInput, LevelPlatformsList);
     // Create Level Editor
-    cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList);
+    cLevelEditorManager LevelEditor(window, PlayerInput, LevelPlatformsList, FileInterface);
 
     // Create Main Menu
     cMainMenu MainMenu(window);

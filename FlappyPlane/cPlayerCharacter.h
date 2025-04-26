@@ -9,9 +9,8 @@ public:
 	~cPlayerCharacter();
 	void Update(float DeltaSeconds);
 	void Draw(sf::RenderWindow& renderWindow);
-	void Jump();
-	void JumpWallsliding();
-	void HandleInput();
+	void SetUngrounded(); // Called from cLevelPlatformList.cpp
+
 	
 
 	// Player Values
@@ -20,7 +19,11 @@ public:
 	static const sf::Vector2f PLAYER_MAX_VELOCITY;
 	static const sf::Vector2f PLAYER_COLLIDER_OFFSET;
 private:
+	void Jump();
+	void JumpWallsliding();
+	void HandleInput();
 	// Player Input
 	cPlayerInput& mPlayerInput;
 	sf::Vector2f m_vPlayerInputNormalized;
+	bool mJumpKeyHeld = false;
 };

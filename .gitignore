@@ -120,3 +120,5 @@ FlappyPlane/x64/Debug/FlappyPlane.exe.recipe
 FlappyPlane/x64/Debug/FlappyPlane.Build.CppClean.log
 *.ipch
 *.vsidx
+FlappyPlane/FlappyPlane.vcxproj
+FlappyPlane/FlappyPlane.vcxproj.filters

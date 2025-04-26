@@ -5,11 +5,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class FileInterface
+class cFileInterface
 {
 public:
-	FileInterface();
-	~FileInterface();
+	cFileInterface();
+	~cFileInterface();
 	void LoadFile(sf::RenderTexture* _Texture);
 	void LoadStamp(sf::Texture* _Texture);
 	void SaveFile(sf::RenderTexture* _Texture);

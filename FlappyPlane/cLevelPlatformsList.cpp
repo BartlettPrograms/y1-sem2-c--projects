@@ -25,8 +25,15 @@ void cLevelPlatformsList::DrawPlatforms(sf::RenderWindow& window)
 
 void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 {
+	bool isColliding = false;
 	for (size_t i = 0; i < mPlatformList.size(); ++i) {
-		mPlatformList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection);
+		if (mPlatformList[i]->CheckCollideWithPlayer(playerCharacter, mCollisionDirection))
+			isColliding = true;
+	}
+
+	if (!isColliding)
+	{
+		playerCharacter.SetUngrounded();
 	}
 }
 

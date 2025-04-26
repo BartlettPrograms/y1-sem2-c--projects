@@ -1,16 +1,16 @@
 #include "cFileInterface.h"
 
-FileInterface::FileInterface()
+cFileInterface::cFileInterface()
 {
 
 }
 
-FileInterface::~FileInterface()
+cFileInterface::~cFileInterface()
 {
 
 }
 
-void FileInterface::LoadFile(sf::RenderTexture* _Texture)
+void cFileInterface::LoadFile(sf::RenderTexture* _Texture)
 {
 	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
@@ -57,7 +57,7 @@ void FileInterface::LoadFile(sf::RenderTexture* _Texture)
 	}
 }
 
-void FileInterface::LoadStamp(sf::Texture* _Texture)
+void cFileInterface::LoadStamp(sf::Texture* _Texture)
 {
 	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
@@ -101,7 +101,7 @@ void FileInterface::LoadStamp(sf::Texture* _Texture)
 	}
 }
 
-void FileInterface::SaveFile(sf::RenderTexture* _Texture)
+void cFileInterface::SaveFile(sf::RenderTexture* _Texture)
 {
 	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
@@ -150,28 +150,5 @@ void FileInterface::SaveFile(sf::RenderTexture* _Texture)
 		}
 
 		CoUninitialize();
-	}
-}
-
-void FileInterface::DialogChooseColor(sf::Color& _Color)
-{
-	CHOOSECOLOR cc;
-	static COLORREF crArray[16];
-	//HWND hwnd;
-
-	ZeroMemory(&cc, sizeof(cc));
-	cc.lStructSize = sizeof(cc);
-	//cc.hwndOwner = hwnd;
-	cc.lpCustColors = (LPDWORD)crArray;
-	cc.Flags = CC_FULLOPEN | CC_RGBINIT;
-
-	if (ChooseColor(&cc) == TRUE)
-	{
-
-		COLORREF CR = cc.rgbResult;
-		_Color.r = GetRValue(CR);
-		_Color.g = GetGValue(CR);
-		_Color.b = GetBValue(CR);
-		//sf::
 	}
 }
