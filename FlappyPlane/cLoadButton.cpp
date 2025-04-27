@@ -21,7 +21,7 @@ cLoadButton::~cLoadButton()
 void cLoadButton::OnButtonClick()
 {
 	// Load to the platform list
-	
+	mFileInterface.LoadLevelDialog(mPlatformList);
 }
 
 void cLoadButton::Draw(sf::RenderWindow& window)

@@ -21,7 +21,7 @@ cSaveButton::~cSaveButton()
 void cSaveButton::OnButtonClick()
 {
 	// Save the platform list
-	mFileInterface.SaveLevel();
+	mFileInterface.SaveLevelDialog(mPlatformList);
 }
 
 void cSaveButton::Draw(sf::RenderWindow& window)

@@ -5,6 +5,7 @@
 
 class cLevelPlatformsList
 {
+	friend class cFileInterface;
 public:
 	cLevelPlatformsList();
 	~cLevelPlatformsList();

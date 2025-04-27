@@ -15,5 +15,6 @@ public:
 	void Draw(sf::RenderWindow& window) override;
 	bool CheckCollideWithPlayer(cCharacter& character, sf::Vector2f& collisionDirection);
 	cBoxCollider& GetCollider() { return mBoxCollider; };
+	cBoxCollider GetColliderCopy() { return mBoxCollider; };
 	void EditorInitPosition();
 };

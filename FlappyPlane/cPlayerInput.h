@@ -5,7 +5,6 @@ class cPlayerInput
 {
 public:
     cPlayerInput();
-    //void UpdateInput(const sf::Event* event); // Takes an event instead of polling
     bool IsJumpInputPressed() const;
     bool IsMoveLeftInputPressed() const;
     bool IsMoveRightInputPressed() const;

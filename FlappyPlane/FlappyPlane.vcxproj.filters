@@ -93,12 +93,21 @@
     <Filter Include="LevelEditor\UI\Toolbar\LoadButton">
       <UniqueIdentifier>{3ea2502a-0284-4903-9072-62effc71300d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameSystems">
+      <UniqueIdentifier>{2ca37fcd-8a4c-450c-acbe-56734a702c49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\GameManager">
+      <UniqueIdentifier>{d36d3036-72d2-4f40-9704-63abf286ef2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelStructure">
+      <UniqueIdentifier>{0708dce2-aaa1-4198-b663-fd4b64d4834f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\Save/Load">
+      <UniqueIdentifier>{a8d276c2-e086-4e83-a9f9-3536ed2c5767}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="cGameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cPlayerCharacter.cpp">
@@ -152,9 +161,6 @@
     <ClCompile Include="cBaseDrawTool.cpp">
       <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
     </ClCompile>
-    <ClCompile Include="cFileInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cRectPlatformToolButton.cpp">
       <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClCompile>
@@ -163,9 +169,6 @@
     </ClCompile>
     <ClCompile Include="cMainMenu.cpp">
       <Filter>UI\Main Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="cLevelPlatformsList.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cAnimationWallslide.cpp">
       <Filter>Animator\Animations\Wallslide</Filter>
@@ -188,11 +191,17 @@
     <ClCompile Include="cLoadButton.cpp">
       <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
     </ClCompile>
+    <ClCompile Include="cGameManager.cpp">
+      <Filter>GameSystems\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="cLevelPlatformsList.cpp">
+      <Filter>GameSystems\LevelStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="cFileInterface.cpp">
+      <Filter>GameSystems\Save/Load</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cGameManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cGameObject.h">
       <Filter>GameObjects</Filter>
     </ClInclude>
@@ -250,9 +259,6 @@
     <ClInclude Include="cBaseDrawTool.h">
       <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
     </ClInclude>
-    <ClInclude Include="cFileInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cRectPlatformToolButton.h">
       <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClInclude>
@@ -261,9 +267,6 @@
     </ClInclude>
     <ClInclude Include="cMainMenu.h">
       <Filter>UI\Main Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="cLevelPlatformsList.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cAnimationWallslide.h">
       <Filter>Animator\Animations\Wallslide</Filter>
@@ -285,6 +288,15 @@
     </ClInclude>
     <ClInclude Include="cLoadButton.h">
       <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
+    </ClInclude>
+    <ClInclude Include="cGameManager.h">
+      <Filter>GameSystems\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="cLevelPlatformsList.h">
+      <Filter>GameSystems\LevelStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="cFileInterface.h">
+      <Filter>GameSystems\Save/Load</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

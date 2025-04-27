@@ -4,15 +4,18 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <fstream>
+#include "cLevelPlatformsList.h"
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 
 class cFileInterface
 {
 public:
 	cFileInterface();
 	~cFileInterface();
-	void LoadFile(sf::RenderTexture* _Texture);
+	void SaveLevelDialog(cLevelPlatformsList platformList);
+	void LoadLevelDialog(cLevelPlatformsList platformList);
 	void LoadStamp(sf::Texture* _Texture);
-	void SaveFile(sf::RenderTexture* _Texture);
-
-	void  DialogChooseColor(sf::Color& _Colour);
 };
