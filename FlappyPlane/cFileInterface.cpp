@@ -89,91 +89,102 @@ void cFileInterface::SaveLevelDialog(const cLevelPlatformsList& platformList) {
 
 void cFileInterface::LoadLevelDialog(cLevelPlatformsList& platformList)
 {
-	//HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    // Initialize COM
+    HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+    if (FAILED(hr)) {
+        std::cerr << "Failed to initialize COM" << std::endl;
+        return;
+    }
 
-	//if (SUCCEEDED(hr))
-	//{
-	//	// creates the dialog
-	//	IFileOpenDialog* pFileOpen;
+    // Create Open File Dialog
+    IFileOpenDialog* pFileOpen = nullptr;
+    hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
+        IID_IFileOpenDialog, (void**)&pFileOpen);
 
-	//	hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
-	//		IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+    if (SUCCEEDED(hr)) {
+        // Set file types
+        COMDLG_FILTERSPEC fileTypes[] = {
+            { L"JSON files", L"*.json" },
+            { L"All files", L"*.*" }
+        };
+        pFileOpen->SetFileTypes(2, fileTypes);
+        pFileOpen->SetDefaultExtension(L"json");
 
-	//	if (SUCCEEDED(hr))
-	//	{
-	//		hr = pFileOpen->Show(NULL);
+        // Show dialog
+        hr = pFileOpen->Show(NULL);
+        if (SUCCEEDED(hr)) {
+            IShellItem* pItem;
+            hr = pFileOpen->GetResult(&pItem);
+            if (SUCCEEDED(hr)) {
+                PWSTR pszFilePath;
+                hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+                if (SUCCEEDED(hr)) {
+                    // Read JSON file
+                    std::ifstream inFile(pszFilePath);
+                    if (inFile.is_open()) {
+                        // Read file content into string
+                        std::string jsonContent((std::istreambuf_iterator<char>(inFile)),
+                            std::istreambuf_iterator<char>());
+                        inFile.close();
 
-	//		// get the file name from the box
-	//		if (SUCCEEDED(hr))
-	//		{
-	//			IShellItem* pItem;
-	//			hr = pFileOpen->GetResult(&pItem);
-	//			if (SUCCEEDED(hr))
-	//			{
-	//				PWSTR pszFilePath;
-	//				hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-	//				if (SUCCEEDED(hr))
-	//				{
-	//					sf::Texture newTex(pszFilePath);
-	//					sf::Sprite newSprite(newTex);
+                        // Parse JSON
+                        rapidjson::Document doc;
+                        if (!doc.Parse(jsonContent.c_str()).HasParseError() && doc.IsObject()) {
+                            // Clear existing platforms
+                            platformList.ClearList();
 
-	//					/*_Texture->draw(newSprite);
-	//					_Texture->display();*/
+                            // Check for platforms array
+                            if (doc.HasMember("platforms") && doc["platforms"].IsArray()) {
+                                const rapidjson::Value& platformsArray = doc["platforms"];
+                                for (rapidjson::SizeType i = 0; i < platformsArray.Size(); ++i) {
+                                    const rapidjson::Value& platformObj = platformsArray[i];
+                                    if (platformObj.IsObject() &&
+                                        platformObj.HasMember("x") && platformObj["x"].IsFloat() &&
+                                        platformObj.HasMember("y") && platformObj["y"].IsFloat() &&
+                                        platformObj.HasMember("width") && platformObj["width"].IsFloat() &&
+                                        platformObj.HasMember("height") && platformObj["height"].IsFloat()) {
+                                        // Extract platform data
+                                        float x = platformObj["x"].GetFloat();
+                                        float y = platformObj["y"].GetFloat();
+                                        float width = platformObj["width"].GetFloat();
+                                        float height = platformObj["height"].GetFloat();
 
-	//					CoTaskMemFree(pszFilePath);
-	//				}
+                                        // Create new platform
+                                        sf::Vector2f position = sf::Vector2f(x, y);
+                                        sf::Vector2f size = sf::Vector2f(width, height);
+                                        sf::FloatRect bounds(position, size);
+                                        cPlatformRect* platform = new cPlatformRect(bounds);
+                                        platformList.AddPlatform(platform);
+                                    }
+                                    else {
+                                        std::cerr << "Invalid platform object at index " << i << std::endl;
+                                    }
+                                }
+                                std::cout << "Loaded " << platformsArray.Size() << " platforms" << std::endl;
+                            }
+                            else {
+                                std::cerr << "No valid platforms array in JSON" << std::endl;
+                            }
+                        }
+                        else {
+                            std::cerr << "Failed to parse JSON file" << std::endl;
+                        }
+                    }
+                    else {
+                        std::cerr << "Failed to open file: " << pszFilePath << std::endl;
+                    }
+                    CoTaskMemFree(pszFilePath);
+                }
+                pItem->Release();
+            }
+        }
+        pFileOpen->Release();
+    }
 
-	//				pItem->Release();
-	//			}
-	//		}
-
-	//		pFileOpen->Release();
-	//	}
-
-	//	CoUninitialize();
-	//}
+    CoUninitialize();
 }
 
-void cFileInterface::LoadStamp(sf::Texture* _Texture)
+void cFileInterface::LoadLevelByName(std::string levelName)
 {
-	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
-	if (SUCCEEDED(hr))
-	{
-		// creates the dialog
-		IFileOpenDialog* pFileOpen;
-
-		hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
-			IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
-
-		if (SUCCEEDED(hr))
-		{
-			hr = pFileOpen->Show(NULL);
-
-			// get the file name from the box
-			if (SUCCEEDED(hr))
-			{
-				IShellItem* pItem;
-				hr = pFileOpen->GetResult(&pItem);
-				if (SUCCEEDED(hr))
-				{
-					PWSTR pszFilePath;
-					hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-					if (SUCCEEDED(hr))
-					{
-						sf::Texture newTex(pszFilePath);
-						_Texture->swap(newTex);
-
-						CoTaskMemFree(pszFilePath);
-					}
-
-					pItem->Release();
-				}
-			}
-
-			pFileOpen->Release();
-		}
-
-		CoUninitialize();
-	}
 }
