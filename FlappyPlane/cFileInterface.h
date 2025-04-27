@@ -15,7 +15,7 @@ class cFileInterface
 public:
 	cFileInterface();
 	~cFileInterface();
-	void SaveLevelDialog(cLevelPlatformsList platformList);
-	void LoadLevelDialog(cLevelPlatformsList platformList);
+	void SaveLevelDialog(const cLevelPlatformsList& platformList);
+	void LoadLevelDialog(cLevelPlatformsList& platformList);
 	void LoadStamp(sf::Texture* _Texture);
 };

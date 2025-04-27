@@ -10,7 +10,7 @@ cFileInterface::~cFileInterface()
 
 }
 
-void cFileInterface::SaveLevelDialog(const cLevelPlatformsList platformList) {
+void cFileInterface::SaveLevelDialog(const cLevelPlatformsList& platformList) {
     // Initialize COM
     HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
     if (FAILED(hr)) {
@@ -87,51 +87,51 @@ void cFileInterface::SaveLevelDialog(const cLevelPlatformsList platformList) {
     CoUninitialize();
 }
 
-void cFileInterface::LoadLevelDialog(cLevelPlatformsList platformList)
+void cFileInterface::LoadLevelDialog(cLevelPlatformsList& platformList)
 {
-	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+	//HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
 
-	if (SUCCEEDED(hr))
-	{
-		// creates the dialog
-		IFileOpenDialog* pFileOpen;
+	//if (SUCCEEDED(hr))
+	//{
+	//	// creates the dialog
+	//	IFileOpenDialog* pFileOpen;
 
-		hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
-			IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+	//	hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
+	//		IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
 
-		if (SUCCEEDED(hr))
-		{
-			hr = pFileOpen->Show(NULL);
+	//	if (SUCCEEDED(hr))
+	//	{
+	//		hr = pFileOpen->Show(NULL);
 
-			// get the file name from the box
-			if (SUCCEEDED(hr))
-			{
-				IShellItem* pItem;
-				hr = pFileOpen->GetResult(&pItem);
-				if (SUCCEEDED(hr))
-				{
-					PWSTR pszFilePath;
-					hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-					if (SUCCEEDED(hr))
-					{
-						sf::Texture newTex(pszFilePath);
-						sf::Sprite newSprite(newTex);
+	//		// get the file name from the box
+	//		if (SUCCEEDED(hr))
+	//		{
+	//			IShellItem* pItem;
+	//			hr = pFileOpen->GetResult(&pItem);
+	//			if (SUCCEEDED(hr))
+	//			{
+	//				PWSTR pszFilePath;
+	//				hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+	//				if (SUCCEEDED(hr))
+	//				{
+	//					sf::Texture newTex(pszFilePath);
+	//					sf::Sprite newSprite(newTex);
 
-						/*_Texture->draw(newSprite);
-						_Texture->display();*/
+	//					/*_Texture->draw(newSprite);
+	//					_Texture->display();*/
 
-						CoTaskMemFree(pszFilePath);
-					}
+	//					CoTaskMemFree(pszFilePath);
+	//				}
 
-					pItem->Release();
-				}
-			}
+	//				pItem->Release();
+	//			}
+	//		}
 
-			pFileOpen->Release();
-		}
+	//		pFileOpen->Release();
+	//	}
 
-		CoUninitialize();
-	}
+	//	CoUninitialize();
+	//}
 }
 
 void cFileInterface::LoadStamp(sf::Texture* _Texture)
