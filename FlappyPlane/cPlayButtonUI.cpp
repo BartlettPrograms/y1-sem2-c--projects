@@ -9,6 +9,7 @@ cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cMainMenu
 
 cPlayButtonUI::~cPlayButtonUI()
 {
+
 }
 
 void cPlayButtonUI::OnButtonClick()

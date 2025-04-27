@@ -157,6 +157,7 @@
     <ClCompile Include="cEditorDrawTool.cpp" />
     <ClCompile Include="cEditorToolbarUI.cpp" />
     <ClCompile Include="cFileInterface.cpp" />
+    <ClCompile Include="cLevelEditorButtonUI.cpp" />
     <ClCompile Include="cLevelEditorManager.cpp" />
     <ClCompile Include="cLevelPlatformsList.cpp" />
     <ClCompile Include="cLoadButton.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="cEditorDrawTool.h" />
     <ClInclude Include="cEditorToolbarUI.h" />
     <ClInclude Include="cFileInterface.h" />
+    <ClInclude Include="cLevelEditorButtonUI.h" />
     <ClInclude Include="cLevelEditorManager.h" />
     <ClInclude Include="cLevelPlatformsList.h" />
     <ClInclude Include="cLoadButton.h" />

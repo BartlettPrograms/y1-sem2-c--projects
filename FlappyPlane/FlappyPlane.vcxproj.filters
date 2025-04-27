@@ -48,29 +48,8 @@
     <Filter Include="UI\Buttons\PlayButton">
       <UniqueIdentifier>{d2c770b7-6cc0-4360-963b-58bbdcdc0084}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LevelEditor">
-      <UniqueIdentifier>{36147ed3-19e9-4516-8677-1f0d0eef9522}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\UI">
-      <UniqueIdentifier>{5f5938c2-a11e-47b1-afda-6f1e9db33359}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\UI\Toolbar">
-      <UniqueIdentifier>{6266aa6f-6189-4da4-9796-97fd057580d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\EditorDrawTool">
-      <UniqueIdentifier>{2f7b3600-b4d1-40a3-81aa-2b21e95addd5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\EditorDrawTool\Tools">
-      <UniqueIdentifier>{dbc56521-79b7-447f-b0ea-0389a7d8c429}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\EditorDrawTool\Tools\Rectangle">
-      <UniqueIdentifier>{c7d2b2c3-8a13-402e-b340-f1c830711a41}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObjects\LevelBlocks">
       <UniqueIdentifier>{776fb4e2-e257-4aaa-b9a0-ed02889267e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\UI\Toolbar\ToolButtonRect">
-      <UniqueIdentifier>{4ab4122d-d4b3-41c8-a70a-556ddc082d33}</UniqueIdentifier>
     </Filter>
     <Filter Include="UI\Main Menu">
       <UniqueIdentifier>{44e97c88-4628-4a0c-959b-ec42068b20f7}</UniqueIdentifier>
@@ -84,15 +63,6 @@
     <Filter Include="GameObjects\LevelBlocks\SlopePlatform">
       <UniqueIdentifier>{00af949d-a27c-45a0-92fa-aaa7a178089c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LevelEditor\EditorDrawTool\Tools\Slope">
-      <UniqueIdentifier>{7cfd7e18-9376-447f-bee9-9e0569e32469}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\UI\Toolbar\SaveButton">
-      <UniqueIdentifier>{320010e4-c3be-46c2-9651-ef87540841b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LevelEditor\UI\Toolbar\LoadButton">
-      <UniqueIdentifier>{3ea2502a-0284-4903-9072-62effc71300d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameSystems">
       <UniqueIdentifier>{2ca37fcd-8a4c-450c-acbe-56734a702c49}</UniqueIdentifier>
     </Filter>
@@ -104,6 +74,39 @@
     </Filter>
     <Filter Include="GameSystems\Save/Load">
       <UniqueIdentifier>{a8d276c2-e086-4e83-a9f9-3536ed2c5767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Buttons\LevelEditorButton">
+      <UniqueIdentifier>{9cf5c52b-9f2c-413d-be58-314621b06ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor">
+      <UniqueIdentifier>{36147ed3-19e9-4516-8677-1f0d0eef9522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\UI">
+      <UniqueIdentifier>{5f5938c2-a11e-47b1-afda-6f1e9db33359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\UI\Toolbar">
+      <UniqueIdentifier>{6266aa6f-6189-4da4-9796-97fd057580d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\UI\Toolbar\ToolButtonRect">
+      <UniqueIdentifier>{4ab4122d-d4b3-41c8-a70a-556ddc082d33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\UI\Toolbar\SaveButton">
+      <UniqueIdentifier>{320010e4-c3be-46c2-9651-ef87540841b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\UI\Toolbar\LoadButton">
+      <UniqueIdentifier>{3ea2502a-0284-4903-9072-62effc71300d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\EditorDrawTool">
+      <UniqueIdentifier>{2f7b3600-b4d1-40a3-81aa-2b21e95addd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\EditorDrawTool\Tools">
+      <UniqueIdentifier>{dbc56521-79b7-447f-b0ea-0389a7d8c429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\EditorDrawTool\Tools\Rectangle">
+      <UniqueIdentifier>{c7d2b2c3-8a13-402e-b340-f1c830711a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameSystems\LevelEditor\EditorDrawTool\Tools\Slope">
+      <UniqueIdentifier>{7cfd7e18-9376-447f-bee9-9e0569e32469}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -150,22 +153,22 @@
       <Filter>UI\Buttons\PlayButton</Filter>
     </ClCompile>
     <ClCompile Include="cEditorToolbarUI.cpp">
-      <Filter>LevelEditor\UI\Toolbar</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar</Filter>
     </ClCompile>
     <ClCompile Include="cEditorDrawTool.cpp">
-      <Filter>LevelEditor\EditorDrawTool</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool</Filter>
     </ClCompile>
     <ClCompile Include="cRectPlatformTool.cpp">
-      <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
     </ClCompile>
     <ClCompile Include="cBaseDrawTool.cpp">
-      <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools</Filter>
     </ClCompile>
     <ClCompile Include="cRectPlatformToolButton.cpp">
-      <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClCompile>
     <ClCompile Include="cLevelEditorManager.cpp">
-      <Filter>LevelEditor</Filter>
+      <Filter>GameSystems\LevelEditor</Filter>
     </ClCompile>
     <ClCompile Include="cMainMenu.cpp">
       <Filter>UI\Main Menu</Filter>
@@ -183,13 +186,13 @@
       <Filter>GameObjects\LevelBlocks\SlopePlatform</Filter>
     </ClCompile>
     <ClCompile Include="cSlopePlatformTool.cpp">
-      <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools\Slope</Filter>
     </ClCompile>
     <ClCompile Include="cSaveButton.cpp">
-      <Filter>LevelEditor\UI\Toolbar\SaveButton</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\SaveButton</Filter>
     </ClCompile>
     <ClCompile Include="cLoadButton.cpp">
-      <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\LoadButton</Filter>
     </ClCompile>
     <ClCompile Include="cGameManager.cpp">
       <Filter>GameSystems\GameManager</Filter>
@@ -199,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="cFileInterface.cpp">
       <Filter>GameSystems\Save/Load</Filter>
+    </ClCompile>
+    <ClCompile Include="cLevelEditorButtonUI.cpp">
+      <Filter>UI\Buttons\LevelEditorButton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -248,22 +254,22 @@
       <Filter>UI\Buttons\PlayButton</Filter>
     </ClInclude>
     <ClInclude Include="cEditorToolbarUI.h">
-      <Filter>LevelEditor\UI\Toolbar</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar</Filter>
     </ClInclude>
     <ClInclude Include="cEditorDrawTool.h">
-      <Filter>LevelEditor\EditorDrawTool</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool</Filter>
     </ClInclude>
     <ClInclude Include="cRectPlatformTool.h">
-      <Filter>LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools\Rectangle</Filter>
     </ClInclude>
     <ClInclude Include="cBaseDrawTool.h">
-      <Filter>LevelEditor\EditorDrawTool\Tools</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools</Filter>
     </ClInclude>
     <ClInclude Include="cRectPlatformToolButton.h">
-      <Filter>LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\ToolButtonRect</Filter>
     </ClInclude>
     <ClInclude Include="cLevelEditorManager.h">
-      <Filter>LevelEditor</Filter>
+      <Filter>GameSystems\LevelEditor</Filter>
     </ClInclude>
     <ClInclude Include="cMainMenu.h">
       <Filter>UI\Main Menu</Filter>
@@ -281,13 +287,13 @@
       <Filter>GameObjects\LevelBlocks</Filter>
     </ClInclude>
     <ClInclude Include="cSlopePlatformTool.h">
-      <Filter>LevelEditor\EditorDrawTool\Tools\Slope</Filter>
+      <Filter>GameSystems\LevelEditor\EditorDrawTool\Tools\Slope</Filter>
     </ClInclude>
     <ClInclude Include="cSaveButton.h">
-      <Filter>LevelEditor\UI\Toolbar\SaveButton</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\SaveButton</Filter>
     </ClInclude>
     <ClInclude Include="cLoadButton.h">
-      <Filter>LevelEditor\UI\Toolbar\LoadButton</Filter>
+      <Filter>GameSystems\LevelEditor\UI\Toolbar\LoadButton</Filter>
     </ClInclude>
     <ClInclude Include="cGameManager.h">
       <Filter>GameSystems\GameManager</Filter>
@@ -297,6 +303,9 @@
     </ClInclude>
     <ClInclude Include="cFileInterface.h">
       <Filter>GameSystems\Save/Load</Filter>
+    </ClInclude>
+    <ClInclude Include="cLevelEditorButtonUI.h">
+      <Filter>UI\Buttons\LevelEditorButton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
