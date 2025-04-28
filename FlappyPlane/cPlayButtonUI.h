@@ -1,15 +1,17 @@
 #pragma once
 #include "cButtonUI.h"
-#include "cMainMenu.h"
+#include "cApplicationManager.h"
 
 class cMainMenu;
 
 class cPlayButtonUI : public cButtonUI
 {
 public:
-	cPlayButtonUI(sf::Vector2f position, sf::Vector2f size, cMainMenu& mainMenu);
+	cPlayButtonUI(sf::Vector2f position, sf::Vector2f size);
 	~cPlayButtonUI();
 	void OnButtonClick() override;
+	void Draw(sf::RenderWindow& window) override;
 private:
-	cMainMenu& mMainMenu;
+	sf::Font mBodyFont;
+	sf::Text mText;
 };

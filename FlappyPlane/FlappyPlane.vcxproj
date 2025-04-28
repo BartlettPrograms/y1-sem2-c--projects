@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cApplicationManager.cpp" />
     <ClCompile Include="cAnimation.cpp" />
     <ClCompile Include="cAnimationJumping.cpp" />
     <ClCompile Include="cAnimationRunning.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="cAnimationSliding.h" />
     <ClInclude Include="cAnimationWallslide.h" />
     <ClInclude Include="cAnimator.h" />
+    <ClInclude Include="cApplicationManager.h" />
     <ClInclude Include="cBoxCollider.h" />
     <ClInclude Include="cButtonUI.h" />
     <ClInclude Include="cCharacter.h" />

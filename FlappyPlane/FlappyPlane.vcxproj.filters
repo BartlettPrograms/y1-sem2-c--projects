@@ -108,6 +108,9 @@
     <Filter Include="GameSystems\LevelEditor\EditorDrawTool\Tools\Slope">
       <UniqueIdentifier>{7cfd7e18-9376-447f-bee9-9e0569e32469}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameSystems\ApplicationManager">
+      <UniqueIdentifier>{f763fe2c-8f73-4711-a643-eca1162053a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -205,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="cLevelEditorButtonUI.cpp">
       <Filter>UI\Buttons\LevelEditorButton</Filter>
+    </ClCompile>
+    <ClCompile Include="cApplicationManager.cpp">
+      <Filter>GameSystems\ApplicationManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +312,9 @@
     </ClInclude>
     <ClInclude Include="cLevelEditorButtonUI.h">
       <Filter>UI\Buttons\LevelEditorButton</Filter>
+    </ClInclude>
+    <ClInclude Include="cApplicationManager.h">
+      <Filter>GameSystems\ApplicationManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,24 +3,21 @@
 cMainMenu::cMainMenu(sf::RenderWindow& renderWindow)
 	: mText(mTitleFont, "NINJA", 30U)
 	, mRenderWindow(renderWindow)
+	// Play Button
 	, mPlayButtonUI ( 
 		mPlayButtonPosition
 		, mButtonSize
-		, *this)
+	)
+	// Level Edit Button
 	, mLevelEditorButtonUI (
 		mLevelEditorButtonPosition
 		, mButtonSize
-		, *this
 	)
 {
-	// get fonts
+	// get font
 	if (!mTitleFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))
 	{
 		std::cerr << "Failed to load title font!" << std::endl;
-	}
-	if (!mBodyFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))
-	{
-		std::cerr << "Failed to load body font!" << std::endl;
 	}
 
 	// set text
@@ -33,24 +30,15 @@ cMainMenu::cMainMenu(sf::RenderWindow& renderWindow)
 
 cMainMenu::~cMainMenu()
 {
+
 }
 
 void cMainMenu::Update()
 {
-	if (mIsActive)
-	{
-		mRenderWindow.draw(mText);
-		mPlayButtonUI.Update(mRenderWindow);
-		mPlayButtonUI.Draw(mRenderWindow);
-	}
+	mRenderWindow.draw(mText);
+	mPlayButtonUI.Update(mRenderWindow);
+	mPlayButtonUI.Draw(mRenderWindow);
+	mLevelEditorButtonUI.Update(mRenderWindow);
+	mLevelEditorButtonUI.Draw(mRenderWindow);
 }
 
-void cMainMenu::StartGame()
-{
-	cGameManager GameManager = new cGameManager(window, PlayerInput, LevelPlatformsList);
-}
-
-void cMainMenu::StartLevelEditor()
-{
-
-}

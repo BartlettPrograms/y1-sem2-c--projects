@@ -1,5 +1,4 @@
 #include "cButtonUI.h"
-#include <iostream>
 
 // Constructor
 cButtonUI::cButtonUI(sf::Vector2f position, sf::Vector2f size)
