@@ -13,6 +13,8 @@ public:
 	void SetLevelEditorRunning(bool isRunning) { mIsLevelEditorRunning = isRunning; }
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
+	// Load level
+	void LoadLevel();
 private:
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;

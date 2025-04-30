@@ -16,13 +16,19 @@ public:
         ToolMode_StampTool
     };
     void SetTool(ToolType type);
+    // Left click
     void UpdateCursor(sf::RenderWindow& window, sf::Vector2f mousePos);
     void UseTool(sf::Vector2f& mousePos);
-    void DrawCursorToScreen(sf::RenderWindow& window);
     void CompleteUseTool();
-private:
+    // Right click
+    void DeleteTool();
+    // Draw to screen
+    void DrawCursorToScreen(sf::RenderWindow& window);
+
+protected:
     cPlayerInput& mPlayerInput;
     sf::RenderWindow& mMainWindow;
+    // Tool objects
     cBaseDrawTool* mActiveTool;
     cRectPlatformTool mRectangleTool;
     

@@ -20,11 +20,11 @@ cPlayButtonUI::cPlayButtonUI(sf::Vector2f position, sf::Vector2f size)
 
 cPlayButtonUI::~cPlayButtonUI()
 {
-
 }
 
 void cPlayButtonUI::OnButtonClick()
 {
+	cSingleton::GetInstance().AppManager.LoadLevel();
 	cSingleton::GetInstance().AppManager.SetMainMenuActive(false);
 	cSingleton::GetInstance().AppManager.SetGameRunning(true);
 }

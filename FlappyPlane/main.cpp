@@ -12,17 +12,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode({ 1366, 768}), "Ninja Clone");
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
-
-
-    // Application Manager
-    cApplicationManager& AppManager = cSingleton::GetInstance().AppManager;
-    AppManager.IsGameRunning();
-
-    std::cout << "GameManager Running: " << AppManager.IsGameRunning() << std::endl;
-    std::cout << "LevelEditor Running: " << AppManager.IsLevelEditorRunning() << std::endl;
-
-    // === cSingleton::GetInstance() ===
-
     // Create File Interface
     cFileInterface FileInterface;
     // Shared Level list
@@ -36,7 +25,12 @@ int main()
     cMainMenu MainMenu(window);
 
     // Create Application Manager
-    cApplicationManager ApplicationManager;
+    //cApplicationManager ApplicationManager;
+    // Application Manager
+    cApplicationManager& AppManager = cSingleton::GetInstance().AppManager;
+    AppManager.IsGameRunning();
+    // === cSingleton::GetInstance() ===
+
 
 
     while (window.isOpen())

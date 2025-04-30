@@ -27,6 +27,7 @@ void cLevelEditorButtonUI::OnButtonClick()
 {
 	cSingleton::GetInstance().AppManager.SetMainMenuActive(false);
 	cSingleton::GetInstance().AppManager.SetLevelEditorRunning(true);
+	cSingleton::GetInstance().AppManager.SetGameRunning(true);
 }
 
 void cLevelEditorButtonUI::Draw(sf::RenderWindow& window)

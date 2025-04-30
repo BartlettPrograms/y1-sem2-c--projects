@@ -184,7 +184,61 @@ void cFileInterface::LoadLevelDialog(cLevelPlatformsList& platformList)
     CoUninitialize();
 }
 
-void cFileInterface::LoadLevelByName(std::string levelName)
+void cFileInterface::LoadLevelByName(std::string levelName, cLevelPlatformsList& platformList)
 {
+    std::string filepath = "Assets/Levels/" + levelName + ".json"; // Added .json extension
+    std::ifstream inFile(filepath);
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open file: " << filepath << std::endl;
+        return;
+    }
 
+    // Read file content into string
+    std::string jsonContent((std::istreambuf_iterator<char>(inFile)),
+        std::istreambuf_iterator<char>());
+    inFile.close();
+
+    // Parse JSON
+    rapidjson::Document doc;
+    if (doc.Parse(jsonContent.c_str()).HasParseError() || !doc.IsObject()) {
+        std::cerr << "Failed to parse JSON file" << std::endl;
+        return;
+    }
+
+    // Clear existing platforms
+    platformList.ClearList();
+
+    // Check for platforms array
+    if (!doc.HasMember("platforms") || !doc["platforms"].IsArray()) {
+        std::cerr << "No valid platforms array in JSON" << std::endl;
+        return;
+    }
+
+    const rapidjson::Value& platformsArray = doc["platforms"];
+    for (rapidjson::SizeType i = 0; i < platformsArray.Size(); ++i) {
+        const rapidjson::Value& platformObj = platformsArray[i];
+        if (!platformObj.IsObject() ||
+            !platformObj.HasMember("x") || !platformObj["x"].IsFloat() ||
+            !platformObj.HasMember("y") || !platformObj["y"].IsFloat() ||
+            !platformObj.HasMember("width") || !platformObj["width"].IsFloat() ||
+            !platformObj.HasMember("height") || !platformObj["height"].IsFloat()) {
+            std::cerr << "Invalid platform object at index " << i << std::endl;
+            continue;
+        }
+
+        // Extract platform data
+        float x = platformObj["x"].GetFloat();
+        float y = platformObj["y"].GetFloat();
+        float width = platformObj["width"].GetFloat();
+        float height = platformObj["height"].GetFloat();
+
+        // Create new platform
+        sf::Vector2f position(x, y);
+        sf::Vector2f size(width, height);
+        sf::FloatRect bounds(position, size);
+        cPlatformRect* platform = new cPlatformRect(bounds);
+        platformList.AddPlatform(platform);
+    }
+
+    std::cout << "Loaded " << platformsArray.Size() << " platforms" << std::endl;
 }
