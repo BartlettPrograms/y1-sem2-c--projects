@@ -1,9 +1,11 @@
 #pragma once
+#include "cLevelPlatformsList.h"
+#include "cFileInterface.h"
 
 class cApplicationManager
 {
 public:
-	cApplicationManager();
+	cApplicationManager(cFileInterface& fileInterface, cLevelPlatformsList& platformList);
 	~cApplicationManager();
 	// Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
@@ -15,32 +17,24 @@ public:
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
 	// Load level
 	void LoadLevel();
+
+	static cApplicationManager* GetInstance()
+	{
+		if (instance == nullptr)
+		{
+			instance = new cApplicationManager(fileInterface, platformList);
+		}
+		return instance;
+	}
+
+
 private:
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;
 	bool mIsMainMenuActive = true;
+
+	cLevelPlatformsList& mPlatformList;
+	cFileInterface& mFileInterface;
+
+	static cApplicationManager* instance;
 };
-
-
-
-// Lazy singleton - this may be an "anti-pattern" but fk it I want to learn singletons rn
-class cSingleton
-{
-protected:
-	cSingleton() = default;
-
-public:
-	cApplicationManager AppManager;
-
-	static cSingleton& GetInstance()
-	{
-		static cSingleton instance;
-		return instance;
-	}
-
-	cSingleton(const cSingleton&) = delete;  // No copy constructors allowed
-	cSingleton(cSingleton&&) = delete; // No move constructor allowed (I dont even know what that is yet)
-	cSingleton& operator = (const cSingleton&) = delete; // Copy Assignment Operator allowed
-	cSingleton& operator = (const cSingleton&&) = delete; // Move Assignment Operator allowed
-};
-

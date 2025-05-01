@@ -25,11 +25,11 @@ int main()
     cMainMenu MainMenu(window);
 
     // Create Application Manager
-    //cApplicationManager ApplicationManager;
+    cApplicationManager AppManager(FileInterface, LevelPlatformsList);
     // Application Manager
-    cApplicationManager& AppManager = cSingleton::GetInstance().AppManager;
-    AppManager.IsGameRunning();
-    // === cSingleton::GetInstance() ===
+    //cApplicationManager* AppManager = cApplicationManager::GetInstance();
+    //AppManager;
+    // === cApplicationManager::GetInstance(); ===
 
 
 

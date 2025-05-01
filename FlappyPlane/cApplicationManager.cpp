@@ -1,6 +1,8 @@
 #include "cApplicationManager.h"
 
-cApplicationManager::cApplicationManager()
+cApplicationManager::cApplicationManager(cFileInterface& fileInterface, cLevelPlatformsList& platformList)
+	: mFileInterface(fileInterface)
+	, mPlatformList(platformList)
 {
 
 }
@@ -12,5 +14,5 @@ cApplicationManager::~cApplicationManager()
 
 void cApplicationManager::LoadLevel()
 {
-	//mFileInterface.LoadLevelByName("levelTest1.json", mLevelPlatformList);
+	mFileInterface.LoadLevelByName("levelTest1.json", mPlatformList);
 }
