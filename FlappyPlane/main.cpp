@@ -25,7 +25,7 @@ int main()
     cMainMenu MainMenu(window);
 
     // Create Application Manager
-    cApplicationManager AppManager(FileInterface, LevelPlatformsList);
+    cApplicationManager AppManager;
     // Application Manager
     //cApplicationManager* AppManager = cApplicationManager::GetInstance();
     //AppManager;

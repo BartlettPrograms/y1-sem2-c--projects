@@ -25,12 +25,8 @@ cPlayButtonUI::~cPlayButtonUI()
 
 void cPlayButtonUI::OnButtonClick()
 {
-	cApplicationManager::GetInstance()->LoadLevel();
 	cApplicationManager::GetInstance()->SetMainMenuActive(false);
 	cApplicationManager::GetInstance()->SetGameRunning(true);
-	/*cSingleton::GetInstance().AppManager.LoadLevel();
-	cSingleton::GetInstance().AppManager.SetMainMenuActive(false);
-	cSingleton::GetInstance().AppManager.SetGameRunning(true);*/
 }
 
 void cPlayButtonUI::Draw(sf::RenderWindow& window)

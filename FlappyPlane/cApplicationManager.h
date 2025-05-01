@@ -5,7 +5,7 @@
 class cApplicationManager
 {
 public:
-	cApplicationManager(cFileInterface& fileInterface, cLevelPlatformsList& platformList);
+	cApplicationManager();
 	~cApplicationManager();
 	// Getters
 	bool IsLevelEditorRunning() { return mIsLevelEditorRunning; }
@@ -15,14 +15,12 @@ public:
 	void SetLevelEditorRunning(bool isRunning) { mIsLevelEditorRunning = isRunning; }
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
-	// Load level
-	void LoadLevel();
 
 	static cApplicationManager* GetInstance()
 	{
 		if (instance == nullptr)
 		{
-			instance = new cApplicationManager(fileInterface, platformList);
+			instance = new cApplicationManager();
 		}
 		return instance;
 	}
@@ -32,9 +30,6 @@ private:
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;
 	bool mIsMainMenuActive = true;
-
-	cLevelPlatformsList& mPlatformList;
-	cFileInterface& mFileInterface;
 
 	static cApplicationManager* instance;
 };
