@@ -11,7 +11,6 @@ public:
 	void Move(float dx, float dy);
 
 	bool CheckCollision(cBoxCollider& other, sf::Vector2f& direction, float push);
-	bool CheckCollideWithPoint(sf::Vector2f* vPosition);
 	sf::FloatRect GetBounds() { return mBounds; }
 	sf::Vector2f GetPosition() { return mBounds.position; }
 	sf::Vector2f GetHalfSize() { return mBounds.size / 2.0f; }

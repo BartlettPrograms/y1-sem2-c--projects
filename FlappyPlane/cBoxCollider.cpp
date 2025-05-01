@@ -71,20 +71,3 @@ bool cBoxCollider::CheckCollision(cBoxCollider& other, sf::Vector2f& direction, 
 	}
 	return false;
 }
-
-bool cBoxCollider::CheckCollideWithPoint(sf::Vector2f* vPosition)
-{
-	if (vPosition == nullptr) {
-		return false; // Safety check for null pointer
-	}
-
-	// Get the boundaries of the FloatRect
-	float left = mBounds.position.x;
-	float right = mBounds.position.x + mBounds.size.x;
-	float top = mBounds.position.y;
-	float bottom = mBounds.position.y + mBounds.size.y;
-
-	// Check if the point is within the bounds
-	return (vPosition->x >= left && vPosition->x <= right &&
-		vPosition->y >= top && vPosition->y <= bottom);
-}

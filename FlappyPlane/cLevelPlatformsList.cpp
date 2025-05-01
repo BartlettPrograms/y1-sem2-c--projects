@@ -37,17 +37,6 @@ void cLevelPlatformsList::CheckCollisions(cPlayerCharacter& playerCharacter)
 	}
 }
 
-void cLevelPlatformsList::CheckCollisionWithPoint(sf::Vector2f* vPosition)
-{
-	for (size_t i = 0; i < mPlatformList.size(); ++i) {
-		if (mPlatformList[i]->GetCollider().CheckCollideWithPoint(vPosition))
-		{
-			mPlatformList.erase(mPlatformList.begin() + i);
-			break;
-		}
-	}
-}
-
 void cLevelPlatformsList::ClearList()
 {
 	// Delete each platform object and clear the vector

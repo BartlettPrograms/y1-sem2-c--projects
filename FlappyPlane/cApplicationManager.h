@@ -16,16 +16,6 @@ public:
 	void SetGameRunning(bool isRunning) { mIsGameRunning = isRunning; }
 	void SetMainMenuActive(bool isActive) { mIsMainMenuActive = isActive; }
 
-	static cApplicationManager* GetInstance()
-	{
-		if (instance == nullptr)
-		{
-			instance = new cApplicationManager();
-		}
-		return instance;
-	}
-
-
 private:
 	bool mIsLevelEditorRunning = false;
 	bool mIsGameRunning = false;

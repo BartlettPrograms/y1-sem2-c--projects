@@ -25,8 +25,8 @@ cPlayButtonUI::~cPlayButtonUI()
 
 void cPlayButtonUI::OnButtonClick()
 {
-	cApplicationManager::GetInstance()->SetMainMenuActive(false);
-	cApplicationManager::GetInstance()->SetGameRunning(true);
+	//cApplicationManager::GetInstance()->SetMainMenuActive(false);
+	//cApplicationManager::GetInstance()->SetGameRunning(true);
 }
 
 void cPlayButtonUI::Draw(sf::RenderWindow& window)

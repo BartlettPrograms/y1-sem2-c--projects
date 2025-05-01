@@ -12,6 +12,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode({ 1366, 768}), "Ninja Clone");
     sf::RectangleShape Background(sf::Vector2f(window.getSize()));
     Background.setFillColor(sf::Color(150, 150, 150));
+
     // Create File Interface
     cFileInterface FileInterface;
     // Shared Level list
@@ -25,12 +26,7 @@ int main()
     cMainMenu MainMenu(window);
 
     // Create Application Manager
-    cApplicationManager AppManager;
-    // Application Manager
-    //cApplicationManager* AppManager = cApplicationManager::GetInstance();
-    //AppManager;
-    // === cApplicationManager::GetInstance(); ===
-
+    cApplicationManager ApplicationManager;
 
 
     while (window.isOpen())
@@ -43,18 +39,18 @@ int main()
 
         window.clear();
         window.draw(Background);
-        if (AppManager.IsGameRunning())
+        if (ApplicationManager.IsGameRunning())
         {
             // Draw / Run game
             GameManager.GameTick();
         }
-        if (AppManager.IsLevelEditorRunning())
+        if (ApplicationManager.IsLevelEditorRunning())
         {
             // Draw / Run level editor
             LevelEditor.Update();
             LevelEditor.Draw();
         }
-        if (AppManager.IsMainMenuActive())
+        if (ApplicationManager.IsMainMenuActive())
         {
             // Draw / Run MainMenu
             MainMenu.Update();

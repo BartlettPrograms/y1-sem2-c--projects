@@ -25,9 +25,10 @@ cLevelEditorButtonUI::~cLevelEditorButtonUI()
 
 void cLevelEditorButtonUI::OnButtonClick()
 {
-	cApplicationManager::GetInstance()->SetMainMenuActive(false);
-	cApplicationManager::GetInstance()->SetLevelEditorRunning(true);
-	cApplicationManager::GetInstance()->SetGameRunning(true);
+	//cApplicationManager::GetInstance()->SetMainMenuActive(false);
+	//cApplicationManager::GetInstance()->SetLevelEditorRunning(true);
+	//cApplicationManager::GetInstance()->SetGameRunning(true);
+
 }
 
 void cLevelEditorButtonUI::Draw(sf::RenderWindow& window)

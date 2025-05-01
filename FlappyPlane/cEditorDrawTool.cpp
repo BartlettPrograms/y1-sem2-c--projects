@@ -21,7 +21,6 @@ void cEditorDrawTool::SetTool(ToolType type)
 
 void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPosition)
 {
-	// Left click / Draw Logic
 	if (mPlayerInput.IsLeftClickPressed() && window.hasFocus())
 	{
 		UseTool(toolPosition);
@@ -39,13 +38,6 @@ void cEditorDrawTool::UpdateCursor(sf::RenderWindow& window, sf::Vector2f toolPo
 			mActiveTool->UpdateCursor(window, toolPosition);
 		}
 	}
-
-	// Right click / Delete Logic
-	if (mPlayerInput.IsRightClickPressed() && window.hasFocus())
-	{
-		sf::Vector2f mousePosF = sf::Vector2f(sf::Mouse::getPosition());
-		mPlatformsList.CheckCollisionWithPoint(&mousePosF);
-	}
 }
 
 void cEditorDrawTool::UseTool(sf::Vector2f& toolPosition)
@@ -55,19 +47,14 @@ void cEditorDrawTool::UseTool(sf::Vector2f& toolPosition)
 	mActiveTool->UseTool(toolPosition);
 }
 
+void cEditorDrawTool::DrawCursorToScreen(sf::RenderWindow& window)
+{
+	mActiveTool->DrawToolToScreen(window);
+}
+
 void cEditorDrawTool::CompleteUseTool()
 {
 	cPlatformRect* platform = mActiveTool->CompleteUseTool();
 	mPlatformsList.AddPlatform(platform);
 }
 
-void cEditorDrawTool::DeleteTool()
-{
-	sf::Vector2f mousePos = sf::Vector2f(sf::Mouse::getPosition());
-	mPlatformsList.CheckCollisionWithPoint(&mousePos);
-}
-
-void cEditorDrawTool::DrawCursorToScreen(sf::RenderWindow& window)
-{
-	mActiveTool->DrawToolToScreen(window);
-}

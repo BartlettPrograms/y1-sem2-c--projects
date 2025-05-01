@@ -14,12 +14,13 @@ cMainMenu::cMainMenu(sf::RenderWindow& renderWindow)
 		, mButtonSize
 	)
 {
-	// get title font
+	// get font
 	if (!mTitleFont.openFromFile("Assets/Fonts/TypeLightSans-KV84p.otf"))
 	{
 		std::cerr << "Failed to load title font!" << std::endl;
 	}
-	// set title text
+
+	// set text
 	mText.setFont(mTitleFont);
 	mText.setFillColor(sf::Color::Black);
 	mText.setCharacterSize(42);

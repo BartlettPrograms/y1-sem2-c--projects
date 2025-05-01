@@ -17,5 +17,5 @@ public:
 	~cFileInterface();
 	void SaveLevelDialog(const cLevelPlatformsList& platformList);
 	void LoadLevelDialog(cLevelPlatformsList& platformList);
-	void LoadLevelByName(std::string levelName, cLevelPlatformsList& platformList);
+	void LoadLevelByName(std::string levelName);
 };
